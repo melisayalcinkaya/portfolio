@@ -32,8 +32,14 @@ export const cv = {
     techLabel: 'Teknolojiler',
     referencesOnRequest: 'Talep üzerine sağlanır.',
     summary:
-      'Atatürk Üniversitesi Yazılım Mühendisliği 2026 mezunu junior yazılım mühendisi. Django, Django REST Framework ve React ile uçtan uca web uygulamaları; Python ile makine öğrenmesi ve doğal dil işleme modelleri geliştirir. Canlı demosu bulunan QR menü ve QR yoklama sistemlerinde API tasarımı, güvenlik, otomatik testler (CI) ve Docker ile yayın süreçlerini yürüttü. Sahte haber tespiti üzerine yazılan bildiride %99,24 doğruluğa ulaşan bir sınıflandırma modeli geliştirdi.',
+      'Atatürk Üniversitesi Yazılım Mühendisliği 2026 mezunu, e-ticaret için yapay zekâ ajanı geliştirme deneyimi olan junior yazılım mühendisi. Django, Django REST Framework ve React ile uçtan uca web uygulamaları; Python ile makine öğrenmesi ve doğal dil işleme modelleri geliştirir. Canlı demosu bulunan QR menü ve QR yoklama sistemlerinde API tasarımı, güvenlik, otomatik testler (CI) ve Docker ile yayın süreçlerini yürüttü. Sahte haber tespiti üzerine yazılan bildiride %99,24 doğruluğa ulaşan bir sınıflandırma modeli geliştirdi.',
     work: [
+      {
+        title: 'Yazılım Geliştirici — E-ticaret ve Yapay Zekâ Ajanları',
+        org: 'BRN Teknoloji',
+        date: '09/2026 – 10/2026',
+        points: ['Şirketin e-ticaret projelerinde yapay zekâ ajanı (AI agent) geliştirme çalışmalarında görev aldı.'],
+      },
       {
         title: 'Stajyer',
         org: 'Berk Yazılım / Barkodcu',
@@ -53,15 +59,8 @@ export const cv = {
         date: '2022 – 2026',
         place: 'Erzurum, Türkiye',
         points: [
-          "Mezun. Gümüşhane Üniversitesi'nden agno ile yatay geçiş yapılarak lisans eğitiminin son 3 yılı burada tamamlandı.",
+          "Mezun. Lisans eğitiminin ilk yılı Gümüşhane Üniversitesi'nde (2021 – 2022) tamamlandı; agno ile yatay geçiş yapılarak son 3 yılı burada okundu.",
         ],
-      },
-      {
-        title: 'Lisans, Yazılım Mühendisliği',
-        org: 'Gümüşhane Üniversitesi',
-        date: '2021 – 2022',
-        place: 'Gümüşhane, Türkiye',
-        points: ['Lisans eğitiminin ilk yılı burada tamamlandı.'],
       },
     ],
     skills: [
@@ -145,8 +144,14 @@ export const cv = {
     techLabel: 'Technologies',
     referencesOnRequest: 'Available on request.',
     summary:
-      'Junior software engineer, graduated in Software Engineering from Atatürk University in 2026. Builds end-to-end web applications with Django, Django REST Framework and React, and machine learning and natural language processing models with Python. Owned API design, security, automated testing (CI) and Docker deployment for QR menu and QR attendance systems that run as live demos. Co-authored a conference paper on fake news detection with a classifier reaching 99.24% accuracy.',
+      'Junior software engineer, graduated in Software Engineering from Atatürk University in 2026, with recent experience in AI agent development for e-commerce. Builds end-to-end web applications with Django, Django REST Framework and React, and machine learning and natural language processing models with Python. Owned API design, security, automated testing (CI) and Docker deployment for QR menu and QR attendance systems that run as live demos. Co-authored a conference paper on fake news detection with a classifier reaching 99.24% accuracy.',
     work: [
+      {
+        title: 'Software Developer — E-commerce and AI Agents',
+        org: 'BRN Teknoloji',
+        date: '09/2026 – 10/2026',
+        points: ["Worked on AI agent development for the company's e-commerce projects."],
+      },
       {
         title: 'Intern',
         org: 'Berk Yazılım / Barkodcu',
@@ -165,14 +170,7 @@ export const cv = {
         org: 'Atatürk University',
         date: '2022 – 2026',
         place: 'Erzurum, Türkiye',
-        points: ['Graduated. Transferred from Gümüşhane University based on GPA and completed the final three years here.'],
-      },
-      {
-        title: 'BSc, Software Engineering',
-        org: 'Gümüşhane University',
-        date: '2021 – 2022',
-        place: 'Gümüşhane, Türkiye',
-        points: ['Completed the first year of the degree.'],
+        points: ['Graduated. Completed the first year at Gümüşhane University (2021 – 2022) and transferred based on GPA for the final three years.'],
       },
     ],
     skills: [

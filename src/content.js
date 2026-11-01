@@ -54,7 +54,7 @@ const tr = {
     title: 'Hakkımda',
     text: [
       "Atatürk Üniversitesi Yazılım Mühendisliği bölümünden 2026'da mezun oldum. Django ve React ile uçtan uca web uygulamaları, Python ile makine öğrenmesi modelleri geliştiriyorum.",
-      "Berk Yazılım'daki stajımda restoranlar için QR menü sisteminin web arayüzü, API'si ve masaüstü yönetim aracı üzerinde çalıştım. Sahte haber tespiti üzerine yazdığımız bildiride Karar Ağaçları modeliyle %99,24 doğruluğa ulaştık.",
+      "Mezuniyetin ardından BRN Teknoloji'de e-ticaret projelerinde yapay zekâ ajanları üzerinde çalıştım. Berk Yazılım'daki stajımda ise restoranlar için QR menü sisteminin web arayüzü, API'si ve masaüstü yönetim aracı üzerinde çalıştım. Sahte haber tespiti üzerine yazdığımız bildiride Karar Ağaçları modeliyle %99,24 doğruluğa ulaştık.",
     ],
     cards: [
       {
@@ -143,6 +143,12 @@ const tr = {
     eduTitle: 'Eğitim',
     work: [
       {
+        role: 'Yazılım Geliştirici, E-ticaret ve Yapay Zekâ Ajanları',
+        org: 'BRN Teknoloji',
+        date: 'Eylül – Ekim 2026',
+        points: ["Şirketin e-ticaret projelerinde yapay zekâ ajanı (AI agent) geliştirme çalışmalarında görev aldım."],
+      },
+      {
         role: 'Stajyer',
         org: 'Berk Yazılım / Barkodcu',
         url: 'https://berkyazilim.com/',
@@ -160,14 +166,7 @@ const tr = {
         org: 'Atatürk Üniversitesi',
         place: 'Erzurum',
         date: '2022 – 2026',
-        note: "Mezun. Gümüşhane Üniversitesi'nden not ortalamasıyla yatay geçiş yaparak son üç yılı burada tamamladım.",
-      },
-      {
-        role: 'Lisans, Yazılım Mühendisliği',
-        org: 'Gümüşhane Üniversitesi',
-        place: 'Gümüşhane',
-        date: '2021 – 2022',
-        note: 'Lisans eğitiminin ilk yılı.',
+        note: "Mezun. İlk yılı Gümüşhane Üniversitesi'nde okudum (2021–2022), not ortalamasıyla yatay geçiş yaptım.",
       },
     ],
   },
@@ -259,7 +258,7 @@ const en = {
     title: 'About me',
     text: [
       'I graduated in Software Engineering from Atatürk University in 2026. I build end-to-end web applications with Django and React, and machine learning models with Python.',
-      'During my internship at Berk Yazılım I worked on the web interface, API and desktop management tool of a QR menu system for restaurants. In our conference paper on fake news detection, a Decision Tree model reached 99.24% accuracy.',
+      'After graduating I worked on AI agents for e-commerce projects at BRN Teknoloji. During my internship at Berk Yazılım I worked on the web interface, API and desktop management tool of a QR menu system for restaurants. In our conference paper on fake news detection, a Decision Tree model reached 99.24% accuracy.',
     ],
     cards: [
       {
@@ -347,6 +346,12 @@ const en = {
     eduTitle: 'Education',
     work: [
       {
+        role: 'Software Developer, E-commerce and AI Agents',
+        org: 'BRN Teknoloji',
+        date: 'September – October 2026',
+        points: ["Worked on AI agent development for the company's e-commerce projects."],
+      },
+      {
         role: 'Intern',
         org: 'Berk Yazılım / Barkodcu',
         url: 'https://berkyazilim.com/',
@@ -364,14 +369,7 @@ const en = {
         org: 'Atatürk University',
         place: 'Erzurum',
         date: '2022 – 2026',
-        note: 'Graduated. Transferred from Gümüşhane University based on GPA and completed the final three years here.',
-      },
-      {
-        role: 'BSc, Software Engineering',
-        org: 'Gümüşhane University',
-        place: 'Gümüşhane',
-        date: '2021 – 2022',
-        note: 'First year of the degree.',
+        note: 'Graduated. Spent my first year at Gümüşhane University (2021–2022), then transferred based on GPA.',
       },
     ],
   },

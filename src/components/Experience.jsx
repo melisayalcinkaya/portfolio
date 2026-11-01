@@ -14,7 +14,7 @@ function Entry({ item }) {
           ) : (
             item.org
           )}
-          , {item.place}
+          {item.place && `, ${item.place}`}
         </p>
         {item.note && <p>{item.note}</p>}
         {item.points && (

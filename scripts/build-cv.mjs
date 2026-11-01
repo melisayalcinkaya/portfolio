@@ -33,7 +33,7 @@ function entry(e) {
   const org = e.url ? `<a href="${esc(e.url)}">${esc(e.org)}</a>` : esc(e.org)
   return `<div class="entry">
     <div class="row"><strong>${esc(e.title)}</strong><span>${esc(e.date)}</span></div>
-    <div class="row sub"><em>${org}</em><em>${esc(e.place)}</em></div>
+    <div class="row sub"><em>${org}</em><em>${esc(e.place ?? '')}</em></div>
     ${bullets(e.points)}
   </div>`
 }
