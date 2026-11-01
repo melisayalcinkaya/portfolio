@@ -54,7 +54,7 @@ const tr = {
     title: 'Hakkımda',
     text: [
       "Atatürk Üniversitesi Yazılım Mühendisliği bölümünden 2026'da mezun oldum. Django ve React ile uçtan uca web uygulamaları, Python ile makine öğrenmesi modelleri geliştiriyorum.",
-      "Mezuniyetin ardından BRN Teknoloji'de e-ticaret projelerinde yapay zekâ ajanları üzerinde çalıştım. Berk Yazılım'daki stajımda ise restoranlar için QR menü sisteminin web arayüzü, API'si ve masaüstü yönetim aracı üzerinde çalıştım. Sahte haber tespiti üzerine yazdığımız bildiride Karar Ağaçları modeliyle %99,24 doğruluğa ulaştık.",
+      "Mezuniyetin ardından BRN Teknoloji'de uzaktan ve yarı zamanlı çalışarak toplantı kayıtlarını düzenleyen ve görevleri takip eden bir yapay zekâ asistanı geliştirdim. Berk Yazılım'daki stajımda ise restoranlar için QR menü sisteminin web arayüzü, API'si ve masaüstü yönetim aracı üzerinde çalıştım. Sahte haber tespiti üzerine yazdığımız bildiride Karar Ağaçları modeliyle %99,24 doğruluğa ulaştık.",
     ],
     cards: [
       {
@@ -145,8 +145,13 @@ const tr = {
       {
         role: 'Yazılım Geliştirici, E-ticaret ve Yapay Zekâ Ajanları',
         org: 'BRN Teknoloji',
+        place: 'Uzaktan, yarı zamanlı',
         date: 'Eylül – Ekim 2026',
-        points: ["Şirketin e-ticaret projelerinde yapay zekâ ajanı (AI agent) geliştirme çalışmalarında görev aldım."],
+        points: [
+          'Medikal ürün ihracatı yapan bir şirketin iç iletişimi için, toplantı transkriptlerinden yapılandırılmış kayıt üreten ve görevleri ardışık toplantılarda takip eden bir yapay zekâ asistanı geliştirdim.',
+          'Model çıktısını Pydantic şemasıyla doğrulayan ve personel onayından geçiren bir akış kurdum; onaylanan kayıtları Notion ile iki yönlü senkronize ettim.',
+          "Prompt sürümlerini sentetik senaryolarda beşer kez çalıştırarak ölçtüm; kusursuz sonuç oranını %60'tan %100'e çıkardım.",
+        ],
       },
       {
         role: 'Stajyer',
@@ -177,11 +182,11 @@ const tr = {
       { name: 'Web geliştirme', items: ['Django', 'Django REST Framework', 'React', 'REST API'] },
       {
         name: 'Veri bilimi ve yapay zekâ',
-        items: ['Makine öğrenmesi', 'Doğal dil işleme (NLP)', 'Derin öğrenme', 'TensorFlow.js'],
+        items: ['Makine öğrenmesi', 'Doğal dil işleme (NLP)', 'Derin öğrenme', 'LLM ve prompt mühendisliği', 'OpenAI API', 'TensorFlow.js'],
       },
       {
         name: 'Araçlar',
-        items: ['Git ve GitHub', 'GitHub Actions', 'Docker', 'pytest', 'PySide6 / PyQt5', 'Figma', 'Unity', 'Claude'],
+        items: ['Git ve GitHub', 'GitHub Actions', 'Docker', 'pytest', 'Streamlit', 'Notion API', 'PySide6 / PyQt5', 'Figma', 'Unity', 'Claude'],
       },
     ],
     certTitle: 'Sertifikalar',
@@ -258,7 +263,7 @@ const en = {
     title: 'About me',
     text: [
       'I graduated in Software Engineering from Atatürk University in 2026. I build end-to-end web applications with Django and React, and machine learning models with Python.',
-      'After graduating I worked on AI agents for e-commerce projects at BRN Teknoloji. During my internship at Berk Yazılım I worked on the web interface, API and desktop management tool of a QR menu system for restaurants. In our conference paper on fake news detection, a Decision Tree model reached 99.24% accuracy.',
+      'After graduating I worked remotely and part-time at BRN Teknoloji, building an AI assistant that organises meeting records and tracks tasks. During my internship at Berk Yazılım I worked on the web interface, API and desktop management tool of a QR menu system for restaurants. In our conference paper on fake news detection, a Decision Tree model reached 99.24% accuracy.',
     ],
     cards: [
       {
@@ -348,8 +353,13 @@ const en = {
       {
         role: 'Software Developer, E-commerce and AI Agents',
         org: 'BRN Teknoloji',
+        place: 'Remote, part-time',
         date: 'September – October 2026',
-        points: ["Worked on AI agent development for the company's e-commerce projects."],
+        points: [
+          'Built an AI assistant for the internal communication of a medical products exporter: it turns meeting transcripts into structured records and tracks tasks across consecutive meetings.',
+          'Designed a flow where model output is validated with a Pydantic schema and approved by staff before it is saved; approved records sync both ways with Notion.',
+          'Measured each prompt version with five runs per synthetic scenario and raised the flawless-run rate from 60% to 100%.',
+        ],
       },
       {
         role: 'Intern',
@@ -380,11 +390,11 @@ const en = {
       { name: 'Web development', items: ['Django', 'Django REST Framework', 'React', 'REST APIs'] },
       {
         name: 'Data science and AI',
-        items: ['Machine learning', 'Natural language processing (NLP)', 'Deep learning', 'TensorFlow.js'],
+        items: ['Machine learning', 'Natural language processing (NLP)', 'Deep learning', 'LLMs and prompt engineering', 'OpenAI API', 'TensorFlow.js'],
       },
       {
         name: 'Tools',
-        items: ['Git and GitHub', 'GitHub Actions', 'Docker', 'pytest', 'PySide6 / PyQt5', 'Figma', 'Unity', 'Claude'],
+        items: ['Git and GitHub', 'GitHub Actions', 'Docker', 'pytest', 'Streamlit', 'Notion API', 'PySide6 / PyQt5', 'Figma', 'Unity', 'Claude'],
       },
     ],
     certTitle: 'Certificates',

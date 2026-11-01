@@ -32,13 +32,18 @@ export const cv = {
     techLabel: 'Teknolojiler',
     referencesOnRequest: 'Talep üzerine sağlanır.',
     summary:
-      'Atatürk Üniversitesi Yazılım Mühendisliği 2026 mezunu, e-ticaret için yapay zekâ ajanı geliştirme deneyimi olan junior yazılım mühendisi. Django, Django REST Framework ve React ile uçtan uca web uygulamaları; Python ile makine öğrenmesi ve doğal dil işleme modelleri geliştirir. Canlı demosu bulunan QR menü ve QR yoklama sistemlerinde API tasarımı, güvenlik, otomatik testler (CI) ve Docker ile yayın süreçlerini yürüttü. Sahte haber tespiti üzerine yazılan bildiride %99,24 doğruluğa ulaşan bir sınıflandırma modeli geliştirdi.',
+      'Atatürk Üniversitesi Yazılım Mühendisliği 2026 mezunu, LLM tabanlı yapay zekâ asistanı geliştirme deneyimi olan junior yazılım mühendisi. Django, Django REST Framework ve React ile uçtan uca web uygulamaları; Python ile makine öğrenmesi ve doğal dil işleme modelleri geliştirir. Canlı demosu bulunan QR menü ve QR yoklama sistemlerinde API tasarımı, güvenlik, otomatik testler (CI) ve Docker ile yayın süreçlerini yürüttü. Sahte haber tespiti üzerine yazılan bildiride %99,24 doğruluğa ulaşan bir sınıflandırma modeli geliştirdi.',
     work: [
       {
         title: 'Yazılım Geliştirici — E-ticaret ve Yapay Zekâ Ajanları',
         org: 'BRN Teknoloji',
         date: '09/2026 – 10/2026',
-        points: ['Şirketin e-ticaret projelerinde yapay zekâ ajanı (AI agent) geliştirme çalışmalarında görev aldı.'],
+        place: 'Uzaktan, yarı zamanlı',
+        points: [
+          'Medikal ürün ihracatı yapan bir şirketin iç iletişimi için, toplantı transkriptlerinden yapılandırılmış kayıt üreten ve görevleri ardışık toplantılarda takip eden yapay zekâ asistanı geliştirdi (OpenAI API, Pydantic, Streamlit).',
+          'Model çıktısını şema ile doğrulayan ve personel onayından geçiren bir akış kurdu; onaylanan kayıtları Notion ile iki yönlü senkronize etti.',
+          "Prompt sürümlerini sentetik senaryolarda beşer çalıştırmayla ölçerek kusursuz sonuç oranını %60'tan %100'e çıkardı.",
+        ],
       },
       {
         title: 'Stajyer',
@@ -65,9 +70,9 @@ export const cv = {
     ],
     skills: [
       ['Programlama Dilleri', 'Python, JavaScript, HTML5, CSS'],
-      ['Veri Bilimi & Yapay Zeka', 'Makine Öğrenmesi, Doğal Dil İşleme (NLP), Derin Öğrenme, TensorFlow.js'],
+      ['Veri Bilimi & Yapay Zeka', 'Makine Öğrenmesi, Doğal Dil İşleme (NLP), Derin Öğrenme, LLM ve Prompt Mühendisliği, OpenAI API, TensorFlow.js'],
       ['Web Geliştirme', 'Django, Django REST Framework, React.js, RESTful API, JWT'],
-      ['Araçlar', 'Git, GitHub, GitHub Actions (CI), Docker, pytest, PySide6 / PyQt5, Figma, Unity, Claude'],
+      ['Araçlar', 'Git, GitHub, GitHub Actions (CI), Docker, pytest, Streamlit, Notion API, PySide6 / PyQt5, Figma, Unity, Claude'],
     ],
     projects: [
       {
@@ -144,13 +149,18 @@ export const cv = {
     techLabel: 'Technologies',
     referencesOnRequest: 'Available on request.',
     summary:
-      'Junior software engineer, graduated in Software Engineering from Atatürk University in 2026, with recent experience in AI agent development for e-commerce. Builds end-to-end web applications with Django, Django REST Framework and React, and machine learning and natural language processing models with Python. Owned API design, security, automated testing (CI) and Docker deployment for QR menu and QR attendance systems that run as live demos. Co-authored a conference paper on fake news detection with a classifier reaching 99.24% accuracy.',
+      'Junior software engineer, graduated in Software Engineering from Atatürk University in 2026, with recent experience building LLM-based AI assistants. Builds end-to-end web applications with Django, Django REST Framework and React, and machine learning and natural language processing models with Python. Owned API design, security, automated testing (CI) and Docker deployment for QR menu and QR attendance systems that run as live demos. Co-authored a conference paper on fake news detection with a classifier reaching 99.24% accuracy.',
     work: [
       {
         title: 'Software Developer — E-commerce and AI Agents',
         org: 'BRN Teknoloji',
         date: '09/2026 – 10/2026',
-        points: ["Worked on AI agent development for the company's e-commerce projects."],
+        place: 'Remote, part-time',
+        points: [
+          'Built an AI assistant for the internal communication of a medical products exporter that turns meeting transcripts into structured records and tracks tasks across meetings (OpenAI API, Pydantic, Streamlit).',
+          'Designed a schema-validated, human-approved flow; approved records sync both ways with Notion.',
+          'Evaluated prompt versions with five runs per synthetic scenario, raising the flawless-run rate from 60% to 100%.',
+        ],
       },
       {
         title: 'Intern',
@@ -175,9 +185,9 @@ export const cv = {
     ],
     skills: [
       ['Programming Languages', 'Python, JavaScript, HTML5, CSS'],
-      ['Data Science & AI', 'Machine Learning, Natural Language Processing (NLP), Deep Learning, TensorFlow.js'],
+      ['Data Science & AI', 'Machine Learning, Natural Language Processing (NLP), Deep Learning, LLMs and Prompt Engineering, OpenAI API, TensorFlow.js'],
       ['Web Development', 'Django, Django REST Framework, React.js, RESTful APIs, JWT'],
-      ['Tools', 'Git, GitHub, GitHub Actions (CI), Docker, pytest, PySide6 / PyQt5, Figma, Unity, Claude'],
+      ['Tools', 'Git, GitHub, GitHub Actions (CI), Docker, pytest, Streamlit, Notion API, PySide6 / PyQt5, Figma, Unity, Claude'],
     ],
     projects: [
       {
