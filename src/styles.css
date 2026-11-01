@@ -1,0 +1,1092 @@
+/* ==========================================================================
+   Melisa Yalçınkaya portfolyo
+   Pastel, yumuşak köşeli "kâğıt sayfalar" + çizgi illüstrasyonlar.
+   Köşe yarıçapı hiyerarşisi: sayfa (sheet) 36px > kart 24px > görsel paneli 16px > hap 999px
+   ========================================================================== */
+
+:root {
+  --page: #d8d0c2;
+  --sheet: #f3efe8;
+  --band: #e6ded1;
+  --paper: #fffdf9;
+  --ink: #1c1b19;
+  --muted: #5d574f;
+  --line: rgba(28, 27, 25, 0.14);
+  --lavender: #cbc8e0;
+  --sky: #bedde4;
+  --butter: #f6e48c;
+  --accent: #cf6443;
+  --tint: var(--lavender);
+  --contact-bg: #1c1b19;
+  --contact-ink: #f3efe8;
+  --focus: #3d5bd9;
+
+  --r-sheet: 36px;
+  --r-card: 24px;
+  --r-panel: 16px;
+  --gutter: clamp(16px, 3vw, 28px);
+  --pad: clamp(22px, 5vw, 64px);
+
+  color-scheme: light;
+}
+
+/* Koyu tema: sistem tercihi (kullanıcı açık temayı seçmediyse) veya kullanıcının seçimi */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --page: #1d1b18;
+    --sheet: #282521;
+    --band: #322e29;
+    --paper: #39342e;
+    --ink: #f1ece4;
+    --muted: #bdb5a8;
+    --line: rgba(241, 236, 228, 0.16);
+    --lavender: #46435e;
+    --sky: #2f4b52;
+    --butter: #574c22;
+    --accent: #e98665;
+    --contact-bg: #12110f;
+    --contact-ink: #f1ece4;
+    --focus: #9fb2ff;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --page: #1d1b18;
+  --sheet: #282521;
+  --band: #322e29;
+  --paper: #39342e;
+  --ink: #f1ece4;
+  --muted: #bdb5a8;
+  --line: rgba(241, 236, 228, 0.16);
+  --lavender: #46435e;
+  --sky: #2f4b52;
+  --butter: #574c22;
+  --accent: #e98665;
+  --contact-bg: #12110f;
+  --contact-ink: #f1ece4;
+  --focus: #9fb2ff;
+  color-scheme: dark;
+}
+
+/* ---------- Temel ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: 'Albert Sans Variable', 'Albert Sans', system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+ul,
+ol,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+svg {
+  display: block;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 100;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--sheet);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px var(--gutter) 24px;
+}
+
+main {
+  display: grid;
+  gap: var(--gutter);
+}
+
+/* ---------- Düğmeler ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 22px;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.btn-sm {
+  min-height: 38px;
+  padding: 0 16px;
+  font-size: 0.9rem;
+}
+
+.btn-ink {
+  background: var(--ink);
+  color: var(--sheet);
+}
+
+.btn-ink:hover {
+  background: color-mix(in srgb, var(--ink) 82%, var(--accent));
+}
+
+.btn-soft {
+  background: var(--band);
+  color: var(--ink);
+}
+
+.btn-soft:hover {
+  background: color-mix(in srgb, var(--band) 80%, var(--ink));
+}
+
+.btn-paper {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.btn-paper:hover {
+  border-color: var(--ink);
+}
+
+.btn-outline-light {
+  border-color: color-mix(in srgb, var(--contact-ink) 40%, transparent);
+  background: transparent;
+  color: var(--contact-ink);
+}
+
+.btn-outline-light:hover {
+  border-color: var(--contact-ink);
+}
+
+/* ---------- Üst menü ---------- */
+.site-header {
+  position: sticky;
+  top: 12px;
+  z-index: 50;
+  margin-bottom: 12px;
+}
+
+.nav-pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 8px 8px 14px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--band) 88%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: auto;
+  min-width: 0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--sheet);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  padding-bottom: 2px;
+}
+
+.brand-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-links a:not(.btn) {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-links a:not(.btn):hover {
+  background: var(--sheet);
+}
+
+.nav-cta {
+  margin-left: 6px;
+  min-height: 42px;
+}
+
+.nav-tools {
+  display: flex;
+  gap: 4px;
+}
+
+.tool-btn {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tool-btn:hover {
+  background: var(--sheet);
+}
+
+.menu-btn {
+  display: none;
+}
+
+/* ---------- Sayfalar (sheet) ---------- */
+.sheet {
+  border-radius: var(--r-sheet);
+  background: var(--sheet);
+  padding: var(--pad);
+}
+
+.sheet-head {
+  display: grid;
+  gap: 10px;
+  max-width: 62ch;
+  margin-bottom: clamp(24px, 4vw, 40px);
+}
+
+.sheet-head p {
+  color: var(--muted);
+}
+
+.tone-lavender {
+  background: var(--lavender);
+  --tint: var(--sky);
+}
+
+.tone-sky {
+  background: var(--sky);
+  --tint: var(--butter);
+}
+
+.tone-butter {
+  background: var(--butter);
+  --tint: var(--lavender);
+}
+
+.tone-paper {
+  background: var(--paper);
+  --tint: var(--butter);
+}
+
+/* İllüstrasyon dolguları */
+.paper-fill {
+  fill: var(--paper);
+}
+
+.tint-fill {
+  fill: var(--tint);
+}
+
+.tint-stroke {
+  stroke: var(--tint);
+}
+
+.ink-fill {
+  fill: var(--ink);
+}
+
+.accent-fill {
+  fill: var(--accent);
+}
+
+/* ---------- Giriş ---------- */
+.hero {
+  padding-top: clamp(28px, 6vw, 72px);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 64px);
+}
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 8px;
+  border-radius: 999px;
+  background: var(--paper);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.status-dot {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.status-dot::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.hero h1 {
+  margin-top: 22px;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.hero-lead {
+  max-width: 34ch;
+  margin-top: 20px;
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.social {
+  display: flex;
+  gap: 6px;
+  margin-top: 22px;
+}
+
+.social a {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  color: var(--ink);
+}
+
+.social a:hover {
+  border-color: var(--ink);
+}
+
+.hero-art {
+  width: 100%;
+  max-width: 480px;
+  justify-self: center;
+  overflow: visible;
+}
+
+/* Sayfa açılışında tek bir hareket: fikir ağı çizilerek belirir */
+.hero-art .draw path {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: draw 1.6s 0.2s ease-out forwards;
+}
+
+.hero-art .draw path[stroke-dasharray='2 7'] {
+  animation: none;
+  stroke-dashoffset: 0;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Hakkımda bandı */
+.band {
+  margin-top: clamp(32px, 6vw, 64px);
+  padding: clamp(22px, 4vw, 40px);
+  border-radius: var(--r-card);
+  background: var(--band);
+}
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(22px, 4vw, 44px);
+  align-items: start;
+}
+
+.about-text {
+  display: grid;
+  gap: 14px;
+  max-width: 60ch;
+}
+
+.about-text h2 {
+  margin-bottom: 4px;
+}
+
+.focus-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  list-style: none;
+}
+
+.focus-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 20px;
+  background: var(--paper);
+}
+
+.focus-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.art-panel {
+  margin-top: auto;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.focus-card .art-panel {
+  margin-top: 12px;
+}
+
+/* ---------- Projeler ---------- */
+.project {
+  display: grid;
+  border-radius: var(--r-card);
+  overflow: hidden;
+}
+
+.project-art {
+  padding: clamp(14px, 3vw, 24px);
+}
+
+.project-art svg {
+  width: 100%;
+  max-height: 230px;
+}
+
+.project-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0 clamp(20px, 3vw, 28px) clamp(22px, 3vw, 28px);
+}
+
+.project-summary {
+  font-size: 1.02rem;
+}
+
+.project-points {
+  display: grid;
+  gap: 6px;
+  padding-left: 1.1em;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.project-points li::marker {
+  color: var(--accent);
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--paper) 70%, transparent);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.tone-paper .tech {
+  background: var(--band);
+}
+
+.project-extra {
+  padding: 14px 16px;
+  border-radius: var(--r-panel);
+  background: color-mix(in srgb, var(--paper) 60%, transparent);
+}
+
+.project-extra p {
+  margin-top: 4px;
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.private-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.demo-note {
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--ink) 72%, transparent);
+}
+
+.project.is-featured {
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: center;
+  margin-bottom: var(--gutter);
+}
+
+.project.is-featured .project-art {
+  order: 2;
+}
+
+.project.is-featured .project-art svg {
+  max-height: 320px;
+}
+
+.project.is-featured .project-body {
+  padding: clamp(22px, 4vw, 40px);
+}
+
+.project.is-featured h3 {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gutter);
+}
+
+.project-grid .project {
+  grid-template-rows: auto 1fr;
+}
+
+/* ---------- Deneyim ---------- */
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gutter);
+}
+
+.panel {
+  padding: clamp(20px, 3vw, 32px);
+  border-radius: var(--r-card);
+}
+
+.panel > h3 {
+  margin-bottom: 20px;
+}
+
+.timeline {
+  display: grid;
+  gap: 22px;
+  list-style: none;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 16px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.entry:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.entry-date {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.entry-body {
+  display: grid;
+  gap: 6px;
+  font-size: 0.97rem;
+  line-height: 1.55;
+}
+
+.entry-org {
+  color: var(--muted);
+}
+
+.entry-org a {
+  text-underline-offset: 3px;
+}
+
+.entry-body ul {
+  display: grid;
+  gap: 6px;
+  padding-left: 1.1em;
+}
+
+.entry-body li::marker {
+  color: var(--accent);
+}
+
+/* ---------- Yetenekler, sertifikalar, yayın ---------- */
+.skills-layout h2 {
+  margin-bottom: 22px;
+}
+
+.skill-groups {
+  display: grid;
+  gap: 18px;
+}
+
+.skill-group dt,
+.cert-groups dt {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.chips li {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--paper);
+  font-size: 0.93rem;
+}
+
+.cert-issuer {
+  margin: -14px 0 18px;
+  color: var(--muted);
+}
+
+.cert-groups {
+  display: grid;
+  gap: 18px;
+}
+
+.cert-groups dd {
+  padding: 8px 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.97rem;
+}
+
+.publication {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  grid-template-areas:
+    'heading heading'
+    'card art';
+  gap: 22px;
+  align-items: center;
+  margin-top: clamp(32px, 5vw, 56px);
+  padding: clamp(22px, 4vw, 40px);
+  border-radius: var(--r-card);
+}
+
+.publication-heading {
+  grid-area: heading;
+}
+
+.pub-card {
+  grid-area: card;
+  display: grid;
+  gap: 10px;
+  padding: clamp(18px, 3vw, 28px);
+  border-radius: 20px;
+  background: var(--paper);
+}
+
+.kind-chip {
+  justify-self: start;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: var(--band);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.pub-card h3 {
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.pub-original {
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.pub-meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.pub-meta time {
+  margin-left: 6px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.pub-card ul {
+  display: grid;
+  gap: 6px;
+  padding-left: 1.1em;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  justify-self: start;
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+
+.pub-art {
+  grid-area: art;
+}
+
+.pub-art svg {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+/* ---------- İletişim ---------- */
+.contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+  background: var(--contact-bg);
+  color: var(--contact-ink);
+  --paper: var(--contact-bg);
+  --ink: var(--contact-ink);
+}
+
+.contact-text {
+  display: grid;
+  gap: 18px;
+}
+
+.contact-text > p {
+  max-width: 48ch;
+  color: color-mix(in srgb, var(--contact-ink) 78%, transparent);
+}
+
+.contact h2 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+}
+
+.contact-email {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-email a {
+  font-size: clamp(1.15rem, 3vw, 1.7rem);
+  font-weight: 500;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1.5px;
+  overflow-wrap: anywhere;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.contact-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: color-mix(in srgb, var(--contact-ink) 70%, transparent);
+  font-size: 0.95rem;
+}
+
+.contact-art {
+  width: 100%;
+  max-width: 300px;
+  justify-self: center;
+}
+
+/* ---------- Alt bilgi ---------- */
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding: 24px 8px 8px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.site-footer a {
+  text-underline-offset: 3px;
+}
+
+/* ---------- Duyarlı düzen (dosyanın sonunda olmalı) ---------- */
+@media (max-width: 1000px) {
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .menu-btn {
+    display: grid;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 10px;
+    border-radius: var(--r-card);
+    background: var(--band);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links a:not(.btn) {
+    padding: 12px 16px;
+    font-size: 1.05rem;
+  }
+
+  .nav-cta {
+    margin: 6px 0 0;
+  }
+
+  .hero-grid,
+  .project.is-featured,
+  .two-col,
+  .publication,
+  .contact {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .publication {
+    grid-template-areas:
+      'heading'
+      'card'
+      'art';
+  }
+
+  .project.is-featured .project-art {
+    order: 0;
+  }
+
+  .hero-art {
+    max-width: 400px;
+  }
+
+  .contact-art {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --r-sheet: 28px;
+    --r-card: 20px;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+
+  .project-grid,
+  .focus-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .entry {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+
+  .band {
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .brand-name {
+    display: none;
+  }
+
+  .hero-actions .btn {
+    flex: 1 1 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-art .draw path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+
+  .btn {
+    transition: none;
+  }
+}
