@@ -80,6 +80,7 @@ const tr = {
       {
         key: 'qrMenu',
         tone: 'lavender',
+        featured: true,
         title: 'QR Menü',
         summary:
           'Restoran ve kafeler için QR kodlu dijital menü. Müşteri masadaki kodu okutur, menüyü kendi dilinde görür ve tek dokunuşla garson çağırır.',
@@ -96,6 +97,22 @@ const tr = {
           label: 'Masaüstü uygulaması',
         },
         links: projectLinks.qrMenu,
+      },
+      {
+        key: 'assistant',
+        tone: 'peach',
+        featured: true,
+        title: 'Kurumsal İletişim Asistanı',
+        summary:
+          "Toplantı transkriptlerinden yapay zekâ ile yapılandırılmış toplantı kaydı üreten, görevleri ardışık toplantılarda takip eden ve onaylanan kayıtları Notion'a aktaran bir uygulama. BRN Teknoloji'de geliştirdim.",
+        points: [
+          'Model görev değişikliklerini (yeni, güncellendi, tamamlandı, iptal) mevcut görev kaydına bağlar; her madde dayandığı transkript satırlarını gösterir',
+          'Hiçbir model çıktısı personel onayı olmadan kayda geçmez; kurallar kayıtta olmayan ya da kapalı bir görevin değiştirilmesini engeller',
+          "Prompt sürümleri referans cevaplarla ölçüldü: kusursuz çalıştırma oranı %60'tan %100'e çıktı, görülmemiş senaryoda da %100",
+        ],
+        tech: ['Python', 'OpenAI API', 'Pydantic', 'Streamlit', 'Notion API'],
+        privateNote: 'Kaynak kodu özel depoda',
+        links: {},
       },
       {
         key: 'qrYoklama',
@@ -143,7 +160,7 @@ const tr = {
     eduTitle: 'Eğitim',
     work: [
       {
-        role: 'Yazılım Geliştirici, E-ticaret ve Yapay Zekâ Ajanları',
+        role: 'Yapay Zekâ Geliştirici',
         org: 'BRN Teknoloji',
         place: 'Uzaktan, yarı zamanlı',
         date: 'Eylül – Ekim 2026',
@@ -289,6 +306,7 @@ const en = {
       {
         key: 'qrMenu',
         tone: 'lavender',
+        featured: true,
         title: 'QR Menu',
         summary:
           'A QR code menu for restaurants and cafés. Guests scan the code on their table, read the menu in their language and call a waiter with one tap.',
@@ -305,6 +323,22 @@ const en = {
           label: 'Desktop app',
         },
         links: projectLinks.qrMenu,
+      },
+      {
+        key: 'assistant',
+        tone: 'peach',
+        featured: true,
+        title: 'Corporate Communication Assistant',
+        summary:
+          'An app that uses AI to turn meeting transcripts into structured meeting records, tracks tasks across consecutive meetings and sends approved records to Notion. Built at BRN Teknoloji.',
+        points: [
+          'The model links task changes (new, updated, completed, cancelled) to the existing task registry; every item shows the transcript lines it is based on',
+          'No model output is saved without staff approval; rules block changes to tasks that are unknown or already closed',
+          'Prompt versions were measured against reference answers: the flawless-run rate rose from 60% to 100%, and stayed at 100% on an unseen scenario',
+        ],
+        tech: ['Python', 'OpenAI API', 'Pydantic', 'Streamlit', 'Notion API'],
+        privateNote: 'Source code is in a private repository',
+        links: {},
       },
       {
         key: 'qrYoklama',
@@ -351,7 +385,7 @@ const en = {
     eduTitle: 'Education',
     work: [
       {
-        role: 'Software Developer, E-commerce and AI Agents',
+        role: 'AI Developer',
         org: 'BRN Teknoloji',
         place: 'Remote, part-time',
         date: 'September – October 2026',

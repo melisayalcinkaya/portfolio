@@ -10,11 +10,12 @@ function ExtLink({ href, children, variant = 'btn-paper' }) {
   )
 }
 
-function ProjectCard({ item, labels, featured }) {
+function ProjectCard({ item, labels, featured, flipped }) {
   const Art = projectArt[item.key]
   const { demo, code, site, desktop } = item.links
+  const classes = ['project', `tone-${item.tone}`, featured && 'is-featured', flipped && 'is-flipped']
   return (
-    <article className={`project tone-${item.tone}${featured ? ' is-featured' : ''}`} aria-labelledby={`p-${item.key}`}>
+    <article className={classes.filter(Boolean).join(' ')} aria-labelledby={`p-${item.key}`}>
       <div className="project-art">
         <Art />
       </div>
@@ -81,14 +82,18 @@ function ProjectCard({ item, labels, featured }) {
 export default function Projects() {
   const { t } = usePrefs()
   const p = t.projects
-  const [featured, ...rest] = p.items
+  // Öne çıkan projeler tam genişlikte, sırayla görsel sağda / solda; diğerleri ızgarada.
+  const featured = p.items.filter((item) => item.featured)
+  const rest = p.items.filter((item) => !item.featured)
   return (
     <section className="sheet" id="projects" aria-labelledby="projects-title">
       <div className="sheet-head">
         <h2 id="projects-title">{p.title}</h2>
         <p>{p.intro}</p>
       </div>
-      <ProjectCard item={featured} labels={p} featured />
+      {featured.map((item, i) => (
+        <ProjectCard key={item.key} item={item} labels={p} featured flipped={i % 2 === 1} />
+      ))}
       <div className="project-grid">
         {rest.map((item) => (
           <ProjectCard key={item.key} item={item} labels={p} />

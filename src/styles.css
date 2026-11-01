@@ -15,6 +15,7 @@
   --lavender: #cbc8e0;
   --sky: #bedde4;
   --butter: #f6e48c;
+  --peach: #f2d2c2;
   --accent: #cf6443;
   --tint: var(--lavender);
   --contact-bg: #1c1b19;
@@ -43,6 +44,7 @@
     --lavender: #46435e;
     --sky: #2f4b52;
     --butter: #574c22;
+    --peach: #5b3d33;
     --accent: #e98665;
     --contact-bg: #12110f;
     --contact-ink: #f1ece4;
@@ -62,6 +64,7 @@
   --lavender: #46435e;
   --sky: #2f4b52;
   --butter: #574c22;
+  --peach: #5b3d33;
   --accent: #e98665;
   --contact-bg: #12110f;
   --contact-ink: #f1ece4;
@@ -381,6 +384,11 @@ main {
   --tint: var(--lavender);
 }
 
+.tone-peach {
+  background: var(--peach);
+  --tint: var(--sky);
+}
+
 .tone-paper {
   background: var(--paper);
   --tint: var(--butter);
@@ -669,6 +677,15 @@ main {
 
 .project.is-featured .project-art {
   order: 2;
+}
+
+/* İkinci öne çıkan kartta görsel solda: kartlar alt alta tekdüze görünmesin */
+.project.is-featured.is-flipped {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+}
+
+.project.is-featured.is-flipped .project-art {
+  order: 0;
 }
 
 .project.is-featured .project-art svg {
@@ -1015,6 +1032,7 @@ main {
 
   .hero-grid,
   .project.is-featured,
+  .project.is-featured.is-flipped,
   .two-col,
   .publication,
   .contact {

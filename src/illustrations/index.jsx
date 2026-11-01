@@ -279,6 +279,36 @@ export function PaperArt({ className }) {
   )
 }
 
+export function AssistantArt({ className }) {
+  return (
+    <Svg viewBox="0 0 320 220" className={className}>
+      {/* toplantı konuşmaları (transkript) */}
+      <path d="M22 40 H110 Q118 40 118 48 V78 Q118 86 110 86 H46 L32 98 V86 H30 Q22 86 22 78 V48 Q22 40 30 40 Z" className="paper-fill" />
+      <path d="M36 56 H100 M36 70 H82" />
+      <path d="M38 112 H118 Q126 112 126 120 V150 Q126 158 118 158 H112 V170 L98 158 H46 Q38 158 38 150 V120 Q38 112 46 112 Z" className="tint-fill" />
+      <path d="M52 128 H112 M52 142 H94" />
+      {/* yapay zekâ: kıvılcım */}
+      <path d="M150 100 H176" strokeDasharray="2 6" />
+      <path d="M163 76 Q165 92 179 94 Q165 96 163 112 Q161 96 147 94 Q161 92 163 76 Z" className="accent-fill" stroke="none" />
+      <path d="M186 70 Q187 76 192 77 Q187 78 186 84 Q185 78 180 77 Q185 76 186 70 Z" className="ink-fill" stroke="none" />
+      {/* onaylanan görev kaydı */}
+      <rect x="196" y="34" width="104" height="152" rx="12" className="paper-fill" />
+      <path d="M210 54 H262" strokeWidth="3" />
+      {[82, 112, 142].map((y, i) => (
+        <g key={y}>
+          <rect x="210" y={y - 8} width="16" height="16" rx="4" className={i < 2 ? 'tint-fill' : ''} />
+          {i < 2 && <path d={`M213 ${y} L217 ${y + 4} L223 ${y - 4}`} />}
+          <path d={`M234 ${y - 3} H${i === 1 ? 270 : 284}`} />
+          <path d={`M234 ${y + 5} H258`} opacity="0.5" />
+        </g>
+      ))}
+      <rect x="210" y="162" width="46" height="12" rx="6" className="ink-fill" stroke="none" />
+      <circle cx="292" cy="40" r="11" className="accent-fill" stroke="none" />
+      <path d="M287 40 L291 44 L298 36" stroke="var(--paper)" strokeWidth="2.4" />
+    </Svg>
+  )
+}
+
 export function EnvelopeArt({ className }) {
   return (
     <Svg viewBox="0 0 220 160" className={className}>
@@ -294,6 +324,7 @@ export function EnvelopeArt({ className }) {
 // eslint-disable-next-line react-refresh/only-export-components
 export const projectArt = {
   qrMenu: QrMenuArt,
+  assistant: AssistantArt,
   qrYoklama: QrYoklamaArt,
   lockNet: LockNetArt,
   ataseng: AtasengArt,

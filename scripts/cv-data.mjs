@@ -35,7 +35,7 @@ export const cv = {
       'Atatürk Üniversitesi Yazılım Mühendisliği 2026 mezunu, LLM tabanlı yapay zekâ asistanı geliştirme deneyimi olan junior yazılım mühendisi. Django, Django REST Framework ve React ile uçtan uca web uygulamaları; Python ile makine öğrenmesi ve doğal dil işleme modelleri geliştirir. Canlı demosu bulunan QR menü ve QR yoklama sistemlerinde API tasarımı, güvenlik, otomatik testler (CI) ve Docker ile yayın süreçlerini yürüttü. Sahte haber tespiti üzerine yazılan bildiride %99,24 doğruluğa ulaşan bir sınıflandırma modeli geliştirdi.',
     work: [
       {
-        title: 'Yazılım Geliştirici — E-ticaret ve Yapay Zekâ Ajanları',
+        title: 'Yapay Zekâ Geliştirici',
         org: 'BRN Teknoloji',
         date: '09/2026 – 10/2026',
         place: 'Uzaktan, yarı zamanlı',
@@ -75,6 +75,15 @@ export const cv = {
       ['Araçlar', 'Git, GitHub, GitHub Actions (CI), Docker, pytest, Streamlit, Notion API, PySide6 / PyQt5, Figma, Unity, Claude'],
     ],
     projects: [
+      {
+        name: 'Kurumsal İletişim Asistanı',
+        tech: 'Python, OpenAI API, Pydantic, Streamlit, Notion API',
+        points: [
+          'Toplantı transkriptlerinden yapılandırılmış kayıt üreten, görev değişikliklerini mevcut görev kaydına bağlayan ve onaylanan kayıtları Notion ile iki yönlü senkronize eden insan onaylı bir LLM uygulaması geliştirildi.',
+          'OpenAI Responses API ve Pydantic şemasıyla (strict mode) doğrulanabilir JSON çıktı alındı; her görev ve karar dayandığı transkript satırlarını gösterir.',
+          'Değerlendirmede referans cevaplar, sürüm başına 5 tekrarlı çalıştırma ve kaynak satırlarının Jaccard benzerliğiyle görev eşleştirme kullanıldı; görülmemiş senaryoda %100 kusursuz sonuç alındı.',
+        ],
+      },
       {
         name: 'QR Menü',
         url: 'https://github.com/melisayalcinkaya/qr_menus',
@@ -152,7 +161,7 @@ export const cv = {
       'Junior software engineer, graduated in Software Engineering from Atatürk University in 2026, with recent experience building LLM-based AI assistants. Builds end-to-end web applications with Django, Django REST Framework and React, and machine learning and natural language processing models with Python. Owned API design, security, automated testing (CI) and Docker deployment for QR menu and QR attendance systems that run as live demos. Co-authored a conference paper on fake news detection with a classifier reaching 99.24% accuracy.',
     work: [
       {
-        title: 'Software Developer — E-commerce and AI Agents',
+        title: 'AI Developer',
         org: 'BRN Teknoloji',
         date: '09/2026 – 10/2026',
         place: 'Remote, part-time',
@@ -190,6 +199,15 @@ export const cv = {
       ['Tools', 'Git, GitHub, GitHub Actions (CI), Docker, pytest, Streamlit, Notion API, PySide6 / PyQt5, Figma, Unity, Claude'],
     ],
     projects: [
+      {
+        name: 'Corporate Communication Assistant',
+        tech: 'Python, OpenAI API, Pydantic, Streamlit, Notion API',
+        points: [
+          'Built a human-in-the-loop LLM application that turns meeting transcripts into structured records, links task changes to the existing task registry and syncs approved records both ways with Notion.',
+          'Used the OpenAI Responses API with a strict Pydantic schema for verifiable JSON output; every task and decision cites its transcript lines.',
+          'Evaluated with reference answers, five repeated runs per prompt version and task matching by Jaccard similarity of source lines; reached 100% flawless runs on an unseen scenario.',
+        ],
+      },
       {
         name: 'QR Menu',
         url: 'https://github.com/melisayalcinkaya/qr_menus',

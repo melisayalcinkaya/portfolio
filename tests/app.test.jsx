@@ -97,11 +97,21 @@ describe('projeler', () => {
     )
   })
 
-  it('özel depodaki LockNet için bağlantı yerine not gösterir', () => {
+  it.each(['LockNet', 'Kurumsal İletişim Asistanı'])('özel depodaki %s için bağlantı yerine not gösterir', (name) => {
     setup()
-    const lockNet = screen.getByRole('article', { name: 'LockNet' })
-    expect(within(lockNet).queryByRole('link')).toBeNull()
-    expect(lockNet).toHaveTextContent('Kaynak kodu özel depoda')
+    const card = screen.getByRole('article', { name })
+    expect(within(card).queryByRole('link')).toBeNull()
+    expect(card).toHaveTextContent('Kaynak kodu özel depoda')
+  })
+
+  it('öne çıkan projeler sırayla gelir, ikincisinin görseli solda', () => {
+    setup()
+    const featured = document.querySelectorAll('.project.is-featured')
+    expect([...featured].map((el) => el.querySelector('h3').textContent)).toEqual([
+      'QR Menü',
+      'Kurumsal İletişim Asistanı',
+    ])
+    expect(featured[1]).toHaveClass('is-flipped')
   })
 
   it('yeni sekmede açılan tüm bağlantılar rel="noreferrer" taşır', () => {
