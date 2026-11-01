@@ -2,7 +2,7 @@
 // Telefon ve referans bilgileri burada YOK: yalnızca `npm run cv -- --private <dosya.json>`
 // ile verilen ve depoya girmeyen yerel bir dosyadan okunur (bkz. scripts/build-cv.mjs).
 
-export const SITE = 'https://melisayalcinkaya.github.io/personel_portfolia/'
+export const SITE = 'https://melisayalcinkaya.github.io/portfolio/'
 
 const shared = {
   name: 'Melisa YALÇINKAYA',

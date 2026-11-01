@@ -25,7 +25,7 @@ export default function App() {
         <p>© {new Date().getFullYear()} Melisa Yalçınkaya</p>
         <p>
           {t.footer.built}{' '}
-          <a href="https://github.com/melisayalcinkaya/personel_portfolia" target="_blank" rel="noreferrer">
+          <a href="https://github.com/melisayalcinkaya/portfolio" target="_blank" rel="noreferrer">
             {t.footer.source}
           </a>
         </p>

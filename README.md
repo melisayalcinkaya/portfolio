@@ -1,13 +1,13 @@
 # Melisa Yalçınkaya | Portfolyo
 
-[![CI](https://github.com/melisayalcinkaya/personel_portfolia/actions/workflows/ci.yml/badge.svg)](https://github.com/melisayalcinkaya/personel_portfolia/actions/workflows/ci.yml)
+[![CI](https://github.com/melisayalcinkaya/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/melisayalcinkaya/portfolio/actions/workflows/ci.yml)
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
 ![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
 [![Lisans: MIT](https://img.shields.io/badge/Lisans-MIT-yellow.svg)](LICENSE)
 
 Junior yazılım mühendisi Melisa Yalçınkaya'nın kişisel sitesi: projeler, deneyim, yetenekler, akademik yayın ve indirilebilir CV.
 
-**🔗 Canlı site: [melisayalcinkaya.github.io/personel_portfolia](https://melisayalcinkaya.github.io/personel_portfolia/)**
+**🔗 Canlı site: [melisayalcinkaya.github.io/portfolio](https://melisayalcinkaya.github.io/portfolio/)**
 
 ![Sitenin giriş bölümü: başlık, kısa tanıtım ve çizgi illüstrasyon](docs/screenshots/masaustu.png)
 
