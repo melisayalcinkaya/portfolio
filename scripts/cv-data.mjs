@@ -67,6 +67,15 @@ export const cv = {
           "Mezun. Lisans eğitiminin ilk yılı Gümüşhane Üniversitesi'nde (2021 – 2022) tamamlandı; agno ile yatay geçiş yapılarak son 3 yılı burada okundu.",
         ],
       },
+      {
+        title: 'AI Engineering Bootcamp',
+        org: 'Tirendaz Akademi',
+        date: '2026',
+        place: 'Çevrim içi, canlı',
+        points: [
+          'LLM, prompt ve context engineering, değerlendirme, embedding ve RAG, AI agent, MCP, fine-tuning ve deployment. Bitirme projesi: Kurumsal İletişim Asistanı.',
+        ],
+      },
     ],
     skills: [
       ['Programlama Dilleri', 'Python, JavaScript, Dart, HTML5, CSS'],
@@ -194,6 +203,15 @@ export const cv = {
         date: '2022 – 2026',
         place: 'Erzurum, Türkiye',
         points: ['Graduated. Completed the first year at Gümüşhane University (2021 – 2022) and transferred based on GPA for the final three years.'],
+      },
+      {
+        title: 'AI Engineering Bootcamp',
+        org: 'Tirendaz Akademi',
+        date: '2026',
+        place: 'Online, live',
+        points: [
+          'LLMs, prompt and context engineering, evaluation, embeddings and RAG, AI agents, MCP, fine-tuning and deployment. Capstone: Corporate Communication Assistant.',
+        ],
       },
     ],
     skills: [

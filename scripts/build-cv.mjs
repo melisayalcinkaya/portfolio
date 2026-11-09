@@ -65,14 +65,14 @@ function render(d) {
   const s = d.sections
   return `<!doctype html><html lang="${d.lang}"><head><meta charset="utf-8"><title>${esc(d.name)} CV</title>
   <style>
-    @page { size: A4; margin: 15mm 17mm 15mm; }
+    @page { size: A4; margin: 13mm 16mm 12mm; }
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: 'Times New Roman', 'Liberation Serif', 'Tinos', serif; font-size: 10.6pt; line-height: 1.32; color: #111; }
+    body { margin: 0; font-family: 'Times New Roman', 'Liberation Serif', 'Tinos', serif; font-size: 10.5pt; line-height: 1.28; color: #111; }
     a { color: #1f4e9a; text-decoration: underline; }
     h1 { margin: 0; font-size: 21pt; letter-spacing: 0.2px; }
     .role { margin-top: 1px; color: #1f4e9a; font-size: 12.5pt; font-weight: bold; }
     .contact { margin-top: 4px; color: #444; font-size: 9.8pt; }
-    h2 { margin: 12px 0 5px; padding-bottom: 2px; border-bottom: 1.2px solid #1f4e9a; color: #1f4e9a; font-size: 11.8pt; text-transform: uppercase; letter-spacing: 0.4px; }
+    h2 { margin: 10px 0 4px; padding-bottom: 2px; border-bottom: 1.2px solid #1f4e9a; color: #1f4e9a; font-size: 11.8pt; text-transform: uppercase; letter-spacing: 0.4px; }
     p { margin: 0; text-align: justify; }
     .entry { margin-bottom: 6px; break-inside: avoid; }
     .row { display: flex; justify-content: space-between; gap: 12px; }

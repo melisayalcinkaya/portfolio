@@ -88,7 +88,7 @@ const tr = {
         featured: true,
         title: 'Kurumsal İletişim Asistanı',
         summary:
-          "Toplantı transkriptlerinden yapay zekâ ile yapılandırılmış toplantı kaydı üreten, görevleri ardışık toplantılarda takip eden ve onaylanan kayıtları Notion'a aktaran bir uygulama. BRN Teknoloji'de geliştirdim.",
+          "Toplantı transkriptlerinden yapay zekâ ile yapılandırılmış toplantı kaydı üreten, görevleri ardışık toplantılarda takip eden ve onaylanan kayıtları Notion'a aktaran bir uygulama. BRN Teknoloji'de geliştirdim; AI Engineering Bootcamp bitirme projem.",
         points: [
           "Kişi adları, telefon, e-posta, IBAN ve TC kimlik numaraları OpenAI'a gitmeden takma adlarla maskelenir; ölçümde sızıntı sıfır",
           'Model görev değişikliklerini mevcut görev kaydına bağlar; hiçbir çıktı personel onayı olmadan kayda geçmez, her değişiklik denetim izine yazılır',
@@ -213,6 +213,13 @@ const tr = {
         date: '2022 – 2026',
         note: "Mezun. İlk yılı Gümüşhane Üniversitesi'nde okudum (2021–2022), not ortalamasıyla yatay geçiş yaptım.",
       },
+      {
+        role: 'AI Engineering Bootcamp',
+        org: 'Tirendaz Akademi',
+        place: 'Çevrim içi, canlı',
+        date: '2026',
+        note: 'LLM ve prompt/context engineering, değerlendirme, embedding ve RAG, AI agent, MCP, fine-tuning ve deployment. Bitirme projesi: Kurumsal İletişim Asistanı.',
+      },
     ],
   },
   skills: {
@@ -335,7 +342,7 @@ const en = {
         featured: true,
         title: 'Corporate Communication Assistant',
         summary:
-          'An app that uses AI to turn meeting transcripts into structured meeting records, tracks tasks across consecutive meetings and sends approved records to Notion. Built at BRN Teknoloji.',
+          'An app that uses AI to turn meeting transcripts into structured meeting records, tracks tasks across consecutive meetings and sends approved records to Notion. Built at BRN Teknoloji; also my AI Engineering Bootcamp capstone.',
         points: [
           'Names, phone numbers, emails, IBANs and national ID numbers are replaced with pseudonyms before anything reaches OpenAI; zero leaks in evaluation',
           'The model links task changes to the existing task registry; nothing is saved without staff approval and every change goes to an audit trail',
@@ -459,6 +466,13 @@ const en = {
         place: 'Erzurum',
         date: '2022 – 2026',
         note: 'Graduated. Spent my first year at Gümüşhane University (2021–2022), then transferred based on GPA.',
+      },
+      {
+        role: 'AI Engineering Bootcamp',
+        org: 'Tirendaz Akademi',
+        place: 'Online, live',
+        date: '2026',
+        note: 'LLMs and prompt/context engineering, evaluation, embeddings and RAG, AI agents, MCP, fine-tuning and deployment. Capstone project: Corporate Communication Assistant.',
       },
     ],
   },
