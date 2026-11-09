@@ -32,7 +32,7 @@ export const cv = {
     techLabel: 'Teknolojiler',
     referencesOnRequest: 'Talep üzerine sağlanır.',
     summary:
-      'Atatürk Üniversitesi Yazılım Mühendisliği 2026 mezunu, LLM tabanlı yapay zekâ asistanı geliştirme deneyimi olan junior yazılım mühendisi. Django, Django REST Framework ve React ile uçtan uca web uygulamaları; Python ile makine öğrenmesi ve doğal dil işleme modelleri geliştirir. Canlı demosu bulunan QR menü ve QR yoklama sistemlerinde API tasarımı, güvenlik, otomatik testler (CI) ve Docker ile yayın süreçlerini yürüttü. Sahte haber tespiti üzerine yazılan bildiride %99,24 doğruluğa ulaşan bir sınıflandırma modeli geliştirdi.',
+      "Atatürk Üniversitesi Yazılım Mühendisliği 2026 mezunu junior yazılım mühendisi. LLM tabanlı asistanlar (yapılandırılmış çıktı, RAG, agent, KVKK için kişisel veri maskeleme) ve tarayıcıda çalışan Türkçe BERT modelleri geliştirir; Django, FastAPI, React ve Flutter ile uçtan uca uygulamalar kurar. Model ve prompt seçimlerini ölçerek yapar, projelerini otomatik testler, GitHub Actions CI ve Docker ile yayına alır.",
     work: [
       {
         title: 'Yapay Zekâ Geliştirici',
@@ -41,8 +41,8 @@ export const cv = {
         place: 'Uzaktan, yarı zamanlı',
         points: [
           'Medikal ürün ihracatı yapan bir şirketin iç iletişimi için, toplantı transkriptlerinden yapılandırılmış kayıt üreten ve görevleri ardışık toplantılarda takip eden yapay zekâ asistanı geliştirdi (OpenAI API, Pydantic, Streamlit).',
-          'Model çıktısını şema ile doğrulayan ve personel onayından geçiren bir akış kurdu; onaylanan kayıtları Notion ile iki yönlü senkronize etti.',
-          "Prompt sürümlerini sentetik senaryolarda beşer çalıştırmayla ölçerek kusursuz sonuç oranını %60'tan %100'e çıkardı.",
+          "KVKK için kişisel verileri OpenAI'a gitmeden takma adlarla maskeleyen katmanı (ölçümde sızıntı 0), denetim izini ve Notion ile iki yönlü senkronizasyonu kurdu.",
+          'Toplantı arşivinde kaynak gösteren arama (RAG) ve salt okunur bir agent ekledi; arama yöntemlerini ve prompt sürümlerini ölçerek seçti.',
         ],
       },
       {
@@ -69,19 +69,36 @@ export const cv = {
       },
     ],
     skills: [
-      ['Programlama Dilleri', 'Python, JavaScript, HTML5, CSS'],
-      ['Veri Bilimi & Yapay Zeka', 'Makine Öğrenmesi, Doğal Dil İşleme (NLP), Derin Öğrenme, LLM ve Prompt Mühendisliği, OpenAI API, TensorFlow.js'],
-      ['Web Geliştirme', 'Django, Django REST Framework, React.js, RESTful API, JWT'],
-      ['Araçlar', 'Git, GitHub, GitHub Actions (CI), Docker, pytest, Streamlit, Notion API, PySide6 / PyQt5, Figma, Unity, Claude'],
+      ['Programlama Dilleri', 'Python, JavaScript, Dart, HTML5, CSS'],
+      ['Yapay Zeka', 'Makine Öğrenmesi, LLM ve Prompt Mühendisliği, OpenAI API, RAG, Agent (tool calling), PyTorch, Hugging Face Transformers, ONNX, scikit-learn, NLP'],
+      ['Web & Mobil', 'Django, Django REST Framework, FastAPI, React.js, Flutter, RESTful API, JWT, Chrome eklentisi (MV3)'],
+      ['Araçlar', 'Git, GitHub, GitHub Actions (CI), Docker, pytest, Streamlit, Notion API, PySide6, Figma, Unity, Claude'],
     ],
     projects: [
       {
         name: 'Kurumsal İletişim Asistanı',
-        tech: 'Python, OpenAI API, Pydantic, Streamlit, Notion API',
+        tech: 'Python, OpenAI API, Pydantic, RAG, Streamlit, Notion API, Docker',
         points: [
-          'Toplantı transkriptlerinden yapılandırılmış kayıt üreten, görev değişikliklerini mevcut görev kaydına bağlayan ve onaylanan kayıtları Notion ile iki yönlü senkronize eden insan onaylı bir LLM uygulaması geliştirildi.',
-          'OpenAI Responses API ve Pydantic şemasıyla (strict mode) doğrulanabilir JSON çıktı alındı; her görev ve karar dayandığı transkript satırlarını gösterir.',
-          'Değerlendirmede referans cevaplar, sürüm başına 5 tekrarlı çalıştırma ve kaynak satırlarının Jaccard benzerliğiyle görev eşleştirme kullanıldı; görülmemiş senaryoda %100 kusursuz sonuç alındı.',
+          'Transkript → kişisel veri maskeleme → LLM taslağı → personel onayı → kayıt + Notion akışıyla çalışan, her maddesi dayandığı transkript satırlarını gösteren insan onaylı bir LLM uygulaması geliştirildi.',
+          'Prompt sürümleri üç sentetik senaryoda beşer çalıştırmayla ölçüldü; son sürüm gürültülü senaryoda %100 kusursuz. Arşiv aramasında embedding, BM25+ ve hibrit karşılaştırıldı (hit@1 %80); agent 14 soruda 14 doğru araç seçti. 86 otomatik test.',
+        ],
+      },
+      {
+        name: 'LockNet: Türkçe Saldırgan Metin Filtresi (Chrome eklentisi)',
+        url: 'https://github.com/melisayalcinkaya/LockNet_extension',
+        tech: 'PyTorch, Transformers, ONNX Runtime Web, JavaScript, Chrome MV3, GitHub Actions',
+        points: [
+          'Türkçe BERT, OffensEval-2020 ile ince ayarlanıp int8 ONNX (41 MB) olarak eklentinin içinde çalıştırıldı: test makro F1 0.804 (BERTurk 0.821), cümle başına ~18 ms; metinler cihazdan çıkmaz.',
+          'Elle etiketlenen 478 metinlik web test setinde AUC 0.966, rastgele metinde %1–2 yanlış alarm. Python ve JavaScript ön işleme/tokenizer eşliği CI testleriyle doğrulandı; int8 nicemlemede parti komşularına bağlı skor hatası bulunup giderildi. Chrome Web Store incelemesinde.',
+        ],
+      },
+      {
+        name: 'SkinSavvy: Cilt Bakım Asistanı',
+        url: 'https://github.com/melisayalcinkaya/SkinSavvy',
+        tech: 'Flutter, Dart, FastAPI, SQLAlchemy, Docker',
+        points: [
+          'İçerik listesini cilt profiline göre yorumlayan, rutin çakışmalarını ve açılmış ürünlerin bozulma tarihini hatırlatan Flutter uygulaması; ekibin onay kuyruğuyla büyüyen topluluk ürün veritabanı.',
+          'FastAPI sunucusunda argon2, dönen refresh token ve çalınma şüphesinde oturum ailesi iptali; ~%99 test kapsamı. Canlı demo: melisayalcinkaya.github.io/SkinSavvy',
         ],
       },
       {
@@ -89,9 +106,8 @@ export const cv = {
         url: 'https://github.com/melisayalcinkaya/qr_menus',
         tech: 'Django REST Framework, React.js, Docker, PySide6',
         points: [
-          'Restoranlar için masaya özel QR kodla açılan, garson çağırma ve hesap isteme özellikli dijital menü ve işletme paneli geliştirildi; 14 alerjen filtresi, TR/EN içerik ve üç menü teması sunuldu.',
-          'API; JWT kimlik doğrulama, sahiplik bazlı yetkilendirme ve hız sınırlarıyla korundu. 90+ otomatik test ve GitHub Actions CI ile %90 kapsam alt sınırı sağlandı.',
-          'Aynı API ile çalışan PySide6 masaüstü çağrı ekranı geliştirildi ve Windows .exe olarak otomatik yayımlandı. Canlı demo: qr-menus.onrender.com',
+          'Restoranlar için masaya özel QR kodla açılan, garson çağırma ve hesap isteme özellikli dijital menü ve işletme paneli; 14 alerjen filtresi, TR/EN içerik, üç tema.',
+          'JWT, sahiplik bazlı yetkilendirme ve hız sınırlarıyla korunan API; 90+ test ve CI. PySide6 masaüstü çağrı ekranı Windows .exe olarak yayımlandı. Canlı demo: qr-menus.onrender.com',
         ],
       },
       {
@@ -99,26 +115,14 @@ export const cv = {
         url: 'https://github.com/melisayalcinkaya/qr_yoklama',
         tech: 'Django, Python, SQLite, Docker',
         points: [
-          '5 saniyede yenilenen ve en fazla 15 saniye geçerli QR kodlar, isteğe bağlı konum doğrulama ve cihaz başına tek kayıt ile kopyaya dayanıklı bir yoklama sistemi geliştirildi.',
-          'Canlı katılım listesi, Excel çıktısı ve devam istatistikleri eklendi. Canlı demo: qr-yoklama-e9u9.onrender.com',
-        ],
-      },
-      {
-        name: 'LockNet',
-        tech: 'JavaScript, TensorFlow.js, NLP, Chrome Extensions API',
-        points: [
-          'Web sayfalarındaki toksik metinleri NLP teknikleriyle gerçek zamanlı tespit edip sansürleyen gizlilik odaklı bir Chrome eklentisi geliştirildi.',
-          'Model tarayıcı içinde çevrimdışı çalıştırılarak verilerin dış sunucuya aktarılması engellendi.',
+          '5 saniyede yenilenen, en fazla 15 saniye geçerli QR kodlar, isteğe bağlı konum doğrulama ve cihaz başına tek kayıtla kopyaya dayanıklı yoklama; canlı liste ve Excel çıktısı. Canlı demo: qr-yoklama-e9u9.onrender.com',
         ],
       },
       {
         name: 'ATASENG Kulüp Web Sitesi',
         url: 'https://www.ataseng.com/',
         tech: 'React.js, Figma',
-        points: [
-          'Bir öğrenci kulübü için kullanıcı deneyimi odaklı, modern bir web platformu oluşturuldu.',
-          "Figma'da hazırlanan arayüz tasarımları React.js ile dinamik ve etkileşimli bir yapıya dönüştürüldü.",
-        ],
+        points: ["Bir öğrenci kulübü için Figma'da tasarlanan arayüz React.js ile etkileşimli bir siteye dönüştürüldü."],
       },
     ],
     certs: [
@@ -158,7 +162,7 @@ export const cv = {
     techLabel: 'Technologies',
     referencesOnRequest: 'Available on request.',
     summary:
-      'Junior software engineer, graduated in Software Engineering from Atatürk University in 2026, with recent experience building LLM-based AI assistants. Builds end-to-end web applications with Django, Django REST Framework and React, and machine learning and natural language processing models with Python. Owned API design, security, automated testing (CI) and Docker deployment for QR menu and QR attendance systems that run as live demos. Co-authored a conference paper on fake news detection with a classifier reaching 99.24% accuracy.',
+      'Junior software engineer, graduated in Software Engineering from Atatürk University in 2026. Builds LLM-based assistants (structured output, RAG, agents, personal data masking for KVKK/GDPR) and Turkish BERT models that run in the browser, and end-to-end apps with Django, FastAPI, React and Flutter. Chooses models and prompts by measuring them, and ships projects with automated tests, GitHub Actions CI and Docker.',
     work: [
       {
         title: 'AI Developer',
@@ -167,8 +171,8 @@ export const cv = {
         place: 'Remote, part-time',
         points: [
           'Built an AI assistant for the internal communication of a medical products exporter that turns meeting transcripts into structured records and tracks tasks across meetings (OpenAI API, Pydantic, Streamlit).',
-          'Designed a schema-validated, human-approved flow; approved records sync both ways with Notion.',
-          'Evaluated prompt versions with five runs per synthetic scenario, raising the flawless-run rate from 60% to 100%.',
+          'Built the layer that pseudonymises personal data before it reaches OpenAI (zero leaks in evaluation), an audit trail and two-way sync with Notion.',
+          'Added source-cited search over the meeting archive (RAG) and a read-only agent; chose search methods and prompt versions by measuring them.',
         ],
       },
       {
@@ -193,19 +197,36 @@ export const cv = {
       },
     ],
     skills: [
-      ['Programming Languages', 'Python, JavaScript, HTML5, CSS'],
-      ['Data Science & AI', 'Machine Learning, Natural Language Processing (NLP), Deep Learning, LLMs and Prompt Engineering, OpenAI API, TensorFlow.js'],
-      ['Web Development', 'Django, Django REST Framework, React.js, RESTful APIs, JWT'],
-      ['Tools', 'Git, GitHub, GitHub Actions (CI), Docker, pytest, Streamlit, Notion API, PySide6 / PyQt5, Figma, Unity, Claude'],
+      ['Programming Languages', 'Python, JavaScript, Dart, HTML5, CSS'],
+      ['AI', 'Machine Learning, LLMs and Prompt Engineering, OpenAI API, RAG, Agents (tool calling), PyTorch, Hugging Face Transformers, ONNX, scikit-learn, NLP'],
+      ['Web & Mobile', 'Django, Django REST Framework, FastAPI, React.js, Flutter, RESTful APIs, JWT, Chrome extensions (MV3)'],
+      ['Tools', 'Git, GitHub, GitHub Actions (CI), Docker, pytest, Streamlit, Notion API, PySide6, Figma, Unity, Claude'],
     ],
     projects: [
       {
         name: 'Corporate Communication Assistant',
-        tech: 'Python, OpenAI API, Pydantic, Streamlit, Notion API',
+        tech: 'Python, OpenAI API, Pydantic, RAG, Streamlit, Notion API, Docker',
         points: [
-          'Built a human-in-the-loop LLM application that turns meeting transcripts into structured records, links task changes to the existing task registry and syncs approved records both ways with Notion.',
-          'Used the OpenAI Responses API with a strict Pydantic schema for verifiable JSON output; every task and decision cites its transcript lines.',
-          'Evaluated with reference answers, five repeated runs per prompt version and task matching by Jaccard similarity of source lines; reached 100% flawless runs on an unseen scenario.',
+          'Built a human-in-the-loop LLM app (transcript → personal data masking → LLM draft → staff approval → record + Notion) in which every item cites the transcript lines it is based on.',
+          'Measured prompt versions with five runs on each of three synthetic scenarios; the latest is 100% flawless on the noisy one. Compared embedding, BM25+ and hybrid search for the archive (hit@1 80%); the agent picked the right tool for 14/14 questions. 86 automated tests.',
+        ],
+      },
+      {
+        name: 'LockNet: Turkish Offensive Text Filter (Chrome extension)',
+        url: 'https://github.com/melisayalcinkaya/LockNet_extension',
+        tech: 'PyTorch, Transformers, ONNX Runtime Web, JavaScript, Chrome MV3, GitHub Actions',
+        points: [
+          'Fine-tuned a Turkish BERT on OffensEval-2020 and shipped it inside the extension as int8 ONNX (41 MB): 0.804 macro F1 on the test set (BERTurk 0.821), ~18 ms per sentence; no text leaves the device.',
+          'AUC 0.966 on a hand-labelled set of 478 web texts with 1–2% false alarms on random text. Python/JavaScript preprocessing and tokenizer parity verified by CI tests; found and fixed int8 scores depending on batch neighbours. In Chrome Web Store review.',
+        ],
+      },
+      {
+        name: 'SkinSavvy: Skincare Assistant',
+        url: 'https://github.com/melisayalcinkaya/SkinSavvy',
+        tech: 'Flutter, Dart, FastAPI, SQLAlchemy, Docker',
+        points: [
+          'Flutter app that reads ingredient lists against the skin profile, catches routine clashes and reminds when opened products expire; a community product database that grows through a team review queue.',
+          'FastAPI server with argon2, rotating refresh tokens and session-family revocation on suspected theft; ~99% test coverage. Live demo: melisayalcinkaya.github.io/SkinSavvy',
         ],
       },
       {
@@ -213,9 +234,8 @@ export const cv = {
         url: 'https://github.com/melisayalcinkaya/qr_menus',
         tech: 'Django REST Framework, React.js, Docker, PySide6',
         points: [
-          'Built a digital menu and owner panel for restaurants, opened from table-specific QR codes, with waiter calls and bill requests, filters for 14 allergen groups, Turkish/English content and three menu themes.',
-          'Secured the API with JWT authentication, ownership-based authorisation and rate limits; 90+ automated tests and GitHub Actions CI enforce a 90% coverage floor.',
-          'Built a PySide6 desktop call screen on the same API, released automatically as a Windows .exe. Live demo: qr-menus.onrender.com',
+          'Digital menu and owner panel for restaurants, opened from table-specific QR codes, with waiter calls and bill requests, 14 allergen filters, Turkish/English content and three themes.',
+          'API secured with JWT, ownership-based authorisation and rate limits; 90+ tests and CI. PySide6 desktop call screen released as a Windows .exe. Live demo: qr-menus.onrender.com',
         ],
       },
       {
@@ -223,26 +243,14 @@ export const cv = {
         url: 'https://github.com/melisayalcinkaya/qr_yoklama',
         tech: 'Django, Python, SQLite, Docker',
         points: [
-          'Built a cheat-resistant attendance system with QR codes that refresh every 5 seconds and expire within 15, an optional location check and one check-in per device.',
-          'Added a live attendance list, Excel export and attendance statistics. Live demo: qr-yoklama-e9u9.onrender.com',
-        ],
-      },
-      {
-        name: 'LockNet',
-        tech: 'JavaScript, TensorFlow.js, NLP, Chrome Extensions API',
-        points: [
-          'Built a privacy-first Chrome extension that detects and censors toxic text on web pages in real time using NLP.',
-          'The model runs offline in the browser, so no page content is sent to an external server.',
+          'Cheat-resistant attendance with QR codes that refresh every 5 seconds and expire within 15, an optional location check and one check-in per device; live list and Excel export. Live demo: qr-yoklama-e9u9.onrender.com',
         ],
       },
       {
         name: 'ATASENG Club Website',
         url: 'https://www.ataseng.com/',
         tech: 'React.js, Figma',
-        points: [
-          'Created a modern, user-experience-focused web platform for a student club.',
-          'Turned interface designs prepared in Figma into a dynamic, interactive React.js site.',
-        ],
+        points: ['Turned a Figma interface design for a student club into an interactive React.js site.'],
       },
     ],
     certs: [
