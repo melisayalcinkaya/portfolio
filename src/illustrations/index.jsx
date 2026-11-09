@@ -221,9 +221,13 @@ export function LockNetArt({ className }) {
       <circle cx="60" cy="46" r="3" />
       <rect x="84" y="40" width="120" height="12" rx="6" opacity="0.6" />
       <path d="M50 80 H140" />
-      <rect x="148" y="74" width="62" height="12" rx="6" className="ink-fill" stroke="none" />
+      {/* bulanıklaştırılmış saldırgan metin */}
+      <filter id="locknet-blur" x="-20%" y="-60%" width="140%" height="220%">
+        <feGaussianBlur stdDeviation="3" />
+      </filter>
+      <rect x="148" y="74" width="62" height="12" rx="6" className="ink-fill" stroke="none" filter="url(#locknet-blur)" opacity="0.75" />
       <path d="M50 102 H210 M50 124 H96" />
-      <rect x="104" y="118" width="72" height="12" rx="6" className="ink-fill" stroke="none" />
+      <rect x="104" y="118" width="72" height="12" rx="6" className="ink-fill" stroke="none" filter="url(#locknet-blur)" opacity="0.75" />
       <path d="M184 124 H210 M50 146 H180 M50 166 H130" />
       {/* kalkan ve kilit */}
       <path d="M252 70 L292 84 V116 Q292 150 252 168 Q212 150 212 116 V84 Z" className="paper-fill" />
@@ -309,6 +313,51 @@ export function AssistantArt({ className }) {
   )
 }
 
+export function SkinSavvyArt({ className }) {
+  return (
+    <Svg viewBox="0 0 320 220" className={className}>
+      {/* damlalıklı serum şişesi */}
+      <path d="M58 40 H82 V58 H58 Z" className="ink-fill" />
+      <path d="M66 22 Q70 14 74 22 V40 H66 Z" className="paper-fill" />
+      <rect x="44" y="58" width="52" height="118" rx="14" className="paper-fill" />
+      <rect x="52" y="96" width="36" height="42" rx="6" className="tint-fill" />
+      <path d="M58 110 H82 M58 122 H76" />
+      <path d="M70 186 Q64 196 70 202 Q76 196 70 186 Z" className="accent-fill" stroke="none" />
+      {/* krem kavanozu */}
+      <path d="M104 150 H162 V184 Q162 194 152 194 H114 Q104 194 104 184 Z" className="paper-fill" />
+      <rect x="100" y="138" width="66" height="14" rx="5" className="ink-fill" />
+      <path d="M116 168 H150" opacity="0.6" />
+      {/* içerik analizi gösteren telefon */}
+      <rect x="186" y="26" width="98" height="176" rx="16" className="paper-fill" />
+      <path d="M220 38 H250" />
+      <path d="M200 60 H258" strokeWidth="3" />
+      {[86, 112, 138].map((y, i) => (
+        <g key={y}>
+          <circle
+            cx="206"
+            cy={y}
+            r="7"
+            className={i === 1 ? 'accent-fill' : 'tint-fill'}
+            stroke={i === 1 ? 'none' : 'currentColor'}
+          />
+          {i === 1 ? (
+            <path d={`M206 ${y - 3} V${y + 1} M206 ${y + 4} V${y + 4.5}`} stroke="var(--paper)" strokeWidth="2.2" />
+          ) : (
+            <path d={`M202.5 ${y} L205 ${y + 2.5} L209.5 ${y - 2.5}`} />
+          )}
+          <path d={`M220 ${y - 3} H${i === 1 ? 262 : 270}`} />
+          <path d={`M220 ${y + 5} H250`} opacity="0.5" />
+        </g>
+      ))}
+      {/* takvim: bozulma tarihi hatırlatması */}
+      <rect x="200" y="158" width="70" height="32" rx="8" />
+      <path d="M200 168 H270" />
+      <circle cx="252" cy="179" r="4" className="accent-fill" stroke="none" />
+      <path d="M212 179 H238" opacity="0.6" />
+    </Svg>
+  )
+}
+
 export function EnvelopeArt({ className }) {
   return (
     <Svg viewBox="0 0 220 160" className={className}>
@@ -325,6 +374,7 @@ export function EnvelopeArt({ className }) {
 export const projectArt = {
   qrMenu: QrMenuArt,
   assistant: AssistantArt,
+  skinSavvy: SkinSavvyArt,
   qrYoklama: QrYoklamaArt,
   lockNet: LockNetArt,
   ataseng: AtasengArt,

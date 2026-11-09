@@ -19,7 +19,7 @@ Junior yazılım mühendisi Melisa Yalçınkaya'nın kişisel sitesi: projeler, 
 
 - **Türkçe ve İngilizce:** Tarayıcı diline göre açılır, üst menüdeki düğmeyle değişir. "CV'yi indir" seçili dildeki CV'yi indirir.
 - **Açık ve koyu tema:** Sistem ayarını izler, seçim hatırlanır. Tema sayfa boyanmadan önce uygulanır, yanıp sönme olmaz.
-- **Projeler:** QR Menü ve Kurumsal İletişim Asistanı öne çıkan kartlarda; canlı demo, kaynak kod ya da "özel depo" notu.
+- **Projeler:** Kurumsal İletişim Asistanı, LockNet ve QR Menü öne çıkan kartlarda; SkinSavvy, QR Yoklama ve ATASENG ızgarada. Canlı demo, kaynak kod ya da "özel depo" notu.
 - **Kendi çizimleri:** Eski şablondaki fotoğraf ve ikonların yerine bu site için çizilmiş satır içi SVG illüstrasyonlar. Ek istek yapmaz, temaya göre renk değiştirir. Eski sürümdeki ~5 MB'lık görseller kaldırıldı; sayfanın tamamı yaklaşık 140 KB (gzip, yazı tipiyle).
 - **Erişilebilirlik:** "İçeriğe geç" bağlantısı, görünür klavye odağı, `aria-expanded` bildiren menü düğmesi (Escape ile kapanır), azaltılmış hareket tercihine saygı.
 - **Paylaşım kartı:** LinkedIn veya WhatsApp'ta bağlantı paylaşılınca görünen önizleme görseli (Open Graph).

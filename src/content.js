@@ -20,6 +20,11 @@ const projectLinks = {
     code: 'https://github.com/melisayalcinkaya/qr_yoklama',
   },
   ataseng: { site: 'https://www.ataseng.com/' },
+  lockNet: { code: 'https://github.com/melisayalcinkaya/LockNet_extension' },
+  skinSavvy: {
+    demo: 'https://melisayalcinkaya.github.io/SkinSavvy/',
+    code: 'https://github.com/melisayalcinkaya/SkinSavvy',
+  },
 }
 
 const tr = {
@@ -46,26 +51,26 @@ const tr = {
     status: 'Yeni mezun, iş tekliflerine açık',
     hello: 'Merhaba, ben Melisa.',
     lead:
-      'Junior yazılım mühendisiyim. Restoranlar, sınıflar ve tarayıcılar için web uygulamaları ve makine öğrenmesi modelleri geliştiriyorum.',
+      'Junior yazılım mühendisiyim. LLM tabanlı asistanlar, tarayıcıda çalışan Türkçe dil modelleri ve uçtan uca web ve mobil uygulamalar geliştiriyorum.',
     primary: 'Projeleri gör',
     cv: "CV'yi indir",
   },
   about: {
     title: 'Hakkımda',
     text: [
-      "Atatürk Üniversitesi Yazılım Mühendisliği bölümünden 2026'da mezun oldum. Django ve React ile uçtan uca web uygulamaları, Python ile makine öğrenmesi modelleri geliştiriyorum.",
-      "Mezuniyetin ardından BRN Teknoloji'de uzaktan ve yarı zamanlı çalışarak toplantı kayıtlarını düzenleyen ve görevleri takip eden bir yapay zekâ asistanı geliştirdim. Berk Yazılım'daki stajımda ise restoranlar için QR menü sisteminin web arayüzü, API'si ve masaüstü yönetim aracı üzerinde çalıştım. Sahte haber tespiti üzerine yazdığımız bildiride Karar Ağaçları modeliyle %99,24 doğruluğa ulaştık.",
+      "Atatürk Üniversitesi Yazılım Mühendisliği bölümünden 2026'da mezun oldum. Yapay zekâ tarafında LLM ile yapılandırılmış çıktı, arşivde arama (RAG) ve Türkçe BERT ince ayarı; yazılım tarafında Django, FastAPI, React ve Flutter ile çalışıyorum.",
+      "BRN Teknoloji'de kişisel verileri maskeleyen ve her kararı insan onayına bağlayan bir toplantı asistanı geliştirdim. Kendi projem LockNet, Türkçe hakaret içeren metinleri tarayıcının içinde çalışan bir BERT modeliyle bulanıklaştırıyor. Her projede sonucu ölçmeye önem veriyorum: hangi modelin, hangi promptun daha iyi olduğunu sayılarla gösteriyorum.",
     ],
     cards: [
       {
         key: 'web',
         title: 'Web uygulamaları',
-        text: 'Django REST API, React arayüz, Docker ile yayın ve otomatik testler.',
+        text: 'Django ve FastAPI ile API, React ve Flutter ile arayüz, Docker ile yayın ve otomatik testler.',
       },
       {
         key: 'ml',
         title: 'Makine öğrenmesi',
-        text: 'Metin sınıflandırma, doğal dil işleme ve tarayıcıda çalışan modeller.',
+        text: 'LLM ile yapılandırılmış çıktı, RAG ve agent, Türkçe BERT ince ayarı, tarayıcıda çalışan modeller.',
       },
     ],
   },
@@ -77,6 +82,39 @@ const tr = {
     site: 'Siteyi aç',
     tech: 'Teknolojiler',
     items: [
+      {
+        key: 'assistant',
+        tone: 'peach',
+        featured: true,
+        title: 'Kurumsal İletişim Asistanı',
+        summary:
+          "Toplantı transkriptlerinden yapay zekâ ile yapılandırılmış toplantı kaydı üreten, görevleri ardışık toplantılarda takip eden ve onaylanan kayıtları Notion'a aktaran bir uygulama. BRN Teknoloji'de geliştirdim.",
+        points: [
+          "Kişi adları, telefon, e-posta, IBAN ve TC kimlik numaraları OpenAI'a gitmeden takma adlarla maskelenir; ölçümde sızıntı sıfır",
+          'Model görev değişikliklerini mevcut görev kaydına bağlar; hiçbir çıktı personel onayı olmadan kayda geçmez, her değişiklik denetim izine yazılır',
+          '"Projeye sor": toplantı arşivinde kaynak gösteren arama (RAG) ve durum sorularını görev kaydına yönlendiren salt okunur bir agent',
+          'Prompt sürümleri üç senaryoda beşer çalıştırmayla ölçüldü; son sürüm gürültülü, gerçekçi toplantıda %100 kusursuz',
+        ],
+        tech: ['Python', 'OpenAI API', 'Pydantic', 'RAG', 'Streamlit', 'Notion API', 'Docker'],
+        privateNote: 'Kaynak kodu özel depoda',
+        links: {},
+      },
+      {
+        key: 'lockNet',
+        tone: 'butter',
+        featured: true,
+        title: 'LockNet',
+        summary:
+          'Türkçe hakaret ve küfür içeren metinleri tarayıcıda, cihaz üzerinde bulanıklaştıran Chrome eklentisi. İnce ayarlı Türkçe BERT modeli eklentinin içinde çalışır; okunan metin hiçbir sunucuya gitmez.',
+        points: [
+          "OffensEval-2020 Türkçe testinde 0.804 makro F1; 2,6 kat büyük BERTurk'e (0.821) yakın. int8 ONNX, 41 MB, cümle başına ~18 ms",
+          'Haber, forum ve sözlük sitelerinden toplayıp elle etiketlediğim 478 metinlik ayrı test setinde AUC 0.966, rastgele metinde %1–2 yanlış alarm',
+          "Ön işleme ve tokenizer Python'da ve JavaScript'te birebir aynı sonucu verir; eşlik testleri CI'da. Bütün modeller GitHub Actions'ta eğitildi",
+        ],
+        tech: ['PyTorch', 'Transformers', 'ONNX Runtime Web', 'JavaScript', 'Chrome MV3'],
+        demoNote: "Chrome Web Store incelemesinde. Şimdilik depodan indirip geliştirici modunda kurulabilir.",
+        links: projectLinks.lockNet,
+      },
       {
         key: 'qrMenu',
         tone: 'lavender',
@@ -99,24 +137,23 @@ const tr = {
         links: projectLinks.qrMenu,
       },
       {
-        key: 'assistant',
-        tone: 'peach',
-        featured: true,
-        title: 'Kurumsal İletişim Asistanı',
+        key: 'skinSavvy',
+        tone: 'sky',
+        title: 'SkinSavvy',
         summary:
-          "Toplantı transkriptlerinden yapay zekâ ile yapılandırılmış toplantı kaydı üreten, görevleri ardışık toplantılarda takip eden ve onaylanan kayıtları Notion'a aktaran bir uygulama. BRN Teknoloji'de geliştirdim.",
+          'Ürünlerin içerik listesini cilt profiline göre yorumlayan, rutindeki çakışmaları ve açılmış ürünlerin bozulma tarihini hatırlatan cilt bakım asistanı.',
         points: [
-          'Model görev değişikliklerini (yeni, güncellendi, tamamlandı, iptal) mevcut görev kaydına bağlar; her madde dayandığı transkript satırlarını gösterir',
-          'Hiçbir model çıktısı personel onayı olmadan kayda geçmez; kurallar kayıtta olmayan ya da kapalı bir görevin değiştirilmesini engeller',
-          "Prompt sürümleri referans cevaplarla ölçüldü: kusursuz çalıştırma oranı %60'tan %100'e çıktı, görülmemiş senaryoda da %100",
+          '65 içerik grubundan oluşan bilgi tabanıyla içerik analizi; retinol ve asit gibi çakışmaları yalnızca ortak günlerde uyarır',
+          'Kullanıcıların eklediği ürünler için ekip onay kuyruğu: düzenleyip onayla, yinelenen, sil',
+          'FastAPI sunucusu: argon2, dönen refresh token ve çalınma şüphesinde oturum ailesini kapatma',
         ],
-        tech: ['Python', 'OpenAI API', 'Pydantic', 'Streamlit', 'Notion API'],
-        privateNote: 'Kaynak kodu özel depoda',
-        links: {},
+        tech: ['Flutter', 'Dart', 'FastAPI', 'SQLAlchemy', 'Docker'],
+        demoNote: '"Demo hesabıyla dene" ile kayıt olmadan açılır.',
+        links: projectLinks.skinSavvy,
       },
       {
         key: 'qrYoklama',
-        tone: 'sky',
+        tone: 'peach',
         title: 'QR Yoklama',
         summary:
           'Derste yoklamayı saniyeler içinde alan, kopya çekilmesi zor bir sistem. Öğretmen QR kodu yansıtır, öğrenciler telefonla okutur.',
@@ -128,20 +165,6 @@ const tr = {
         tech: ['Django', 'Python', 'SQLite', 'Docker'],
         demoNote: 'Demo hesabı: demo / demo-sifre-2026',
         links: projectLinks.qrYoklama,
-      },
-      {
-        key: 'lockNet',
-        tone: 'butter',
-        title: 'LockNet',
-        summary:
-          'Web sayfalarındaki toksik metinleri gerçek zamanlı bulup sansürleyen, gizlilik odaklı bir Chrome eklentisi.',
-        points: [
-          'Model tarayıcının içinde, çevrimdışı çalışır; okunan metin hiçbir sunucuya gönderilmez',
-          'Doğal dil işleme ile sayfa yüklenirken metin sınıflandırma',
-        ],
-        tech: ['JavaScript', 'TensorFlow.js', 'NLP', 'Chrome Extensions API'],
-        privateNote: 'Kaynak kodu özel depoda',
-        links: {},
       },
       {
         key: 'ataseng',
@@ -166,8 +189,8 @@ const tr = {
         date: 'Eylül – Ekim 2026',
         points: [
           'Medikal ürün ihracatı yapan bir şirketin iç iletişimi için, toplantı transkriptlerinden yapılandırılmış kayıt üreten ve görevleri ardışık toplantılarda takip eden bir yapay zekâ asistanı geliştirdim.',
-          'Model çıktısını Pydantic şemasıyla doğrulayan ve personel onayından geçiren bir akış kurdum; onaylanan kayıtları Notion ile iki yönlü senkronize ettim.',
-          "Prompt sürümlerini sentetik senaryolarda beşer kez çalıştırarak ölçtüm; kusursuz sonuç oranını %60'tan %100'e çıkardım.",
+          "KVKK için kişisel verileri OpenAI'a gitmeden maskeleyen bir katman, denetim izi ve Notion ile iki yönlü senkronizasyon kurdum.",
+          'Toplantı arşivinde kaynak gösteren arama (RAG) ve salt okunur bir agent ekledim; arama yöntemlerini ve prompt sürümlerini ölçerek seçtim.',
         ],
       },
       {
@@ -195,15 +218,18 @@ const tr = {
   skills: {
     title: 'Yetenekler',
     groups: [
-      { name: 'Programlama dilleri', items: ['Python', 'JavaScript', 'HTML5', 'CSS'] },
-      { name: 'Web geliştirme', items: ['Django', 'Django REST Framework', 'React', 'REST API'] },
+      { name: 'Programlama dilleri', items: ['Python', 'JavaScript', 'Dart', 'HTML5', 'CSS'] },
       {
-        name: 'Veri bilimi ve yapay zekâ',
-        items: ['Makine öğrenmesi', 'Doğal dil işleme (NLP)', 'Derin öğrenme', 'LLM ve prompt mühendisliği', 'OpenAI API', 'TensorFlow.js'],
+        name: 'Yapay zekâ',
+        items: ['Makine öğrenmesi', 'LLM ve prompt mühendisliği', 'OpenAI API', 'RAG', 'Agent (tool calling)', 'PyTorch', 'Hugging Face Transformers', 'ONNX', 'scikit-learn', 'Doğal dil işleme (NLP)'],
+      },
+      {
+        name: 'Web ve mobil',
+        items: ['Django', 'Django REST Framework', 'FastAPI', 'React', 'Flutter', 'REST API', 'Chrome eklentisi (MV3)'],
       },
       {
         name: 'Araçlar',
-        items: ['Git ve GitHub', 'GitHub Actions', 'Docker', 'pytest', 'Streamlit', 'Notion API', 'PySide6 / PyQt5', 'Figma', 'Unity', 'Claude'],
+        items: ['Git ve GitHub', 'GitHub Actions', 'Docker', 'pytest', 'Streamlit', 'Notion API', 'PySide6', 'Figma', 'Unity', 'Claude'],
       },
     ],
     certTitle: 'Sertifikalar',
@@ -272,26 +298,26 @@ const en = {
     status: 'Recent graduate, open to work',
     hello: "Hi, I'm Melisa.",
     lead:
-      "I'm a junior software engineer. I build web applications and machine learning models for restaurants, classrooms and browsers.",
+      "I'm a junior software engineer. I build LLM-based assistants, Turkish language models that run in the browser, and end-to-end web and mobile apps.",
     primary: 'See projects',
     cv: 'Download CV',
   },
   about: {
     title: 'About me',
     text: [
-      'I graduated in Software Engineering from Atatürk University in 2026. I build end-to-end web applications with Django and React, and machine learning models with Python.',
-      'After graduating I worked remotely and part-time at BRN Teknoloji, building an AI assistant that organises meeting records and tracks tasks. During my internship at Berk Yazılım I worked on the web interface, API and desktop management tool of a QR menu system for restaurants. In our conference paper on fake news detection, a Decision Tree model reached 99.24% accuracy.',
+      'I graduated in Software Engineering from Atatürk University in 2026. On the AI side I work with structured LLM output, retrieval (RAG) and fine-tuning Turkish BERT models; on the software side with Django, FastAPI, React and Flutter.',
+      "At BRN Teknoloji I built a meeting assistant that masks personal data and puts every decision behind human approval. My own project LockNet blurs offensive Turkish text with a BERT model that runs inside the browser. In every project I measure the result: which model or prompt is better is shown with numbers.",
     ],
     cards: [
       {
         key: 'web',
         title: 'Web applications',
-        text: 'Django REST APIs, React interfaces, Docker deployments and automated tests.',
+        text: 'APIs with Django and FastAPI, interfaces with React and Flutter, Docker deployments and automated tests.',
       },
       {
         key: 'ml',
         title: 'Machine learning',
-        text: 'Text classification, natural language processing and models that run in the browser.',
+        text: 'Structured LLM output, RAG and agents, fine-tuning Turkish BERT, models that run in the browser.',
       },
     ],
   },
@@ -303,6 +329,39 @@ const en = {
     site: 'Open site',
     tech: 'Technologies',
     items: [
+      {
+        key: 'assistant',
+        tone: 'peach',
+        featured: true,
+        title: 'Corporate Communication Assistant',
+        summary:
+          'An app that uses AI to turn meeting transcripts into structured meeting records, tracks tasks across consecutive meetings and sends approved records to Notion. Built at BRN Teknoloji.',
+        points: [
+          'Names, phone numbers, emails, IBANs and national ID numbers are replaced with pseudonyms before anything reaches OpenAI; zero leaks in evaluation',
+          'The model links task changes to the existing task registry; nothing is saved without staff approval and every change goes to an audit trail',
+          '"Ask the project": source-cited search over the meeting archive (RAG) and a read-only agent that sends status questions to the task registry',
+          'Prompt versions were measured with five runs on each of three scenarios; the latest version is 100% flawless on a noisy, realistic meeting',
+        ],
+        tech: ['Python', 'OpenAI API', 'Pydantic', 'RAG', 'Streamlit', 'Notion API', 'Docker'],
+        privateNote: 'Source code is in a private repository',
+        links: {},
+      },
+      {
+        key: 'lockNet',
+        tone: 'butter',
+        featured: true,
+        title: 'LockNet',
+        summary:
+          'A Chrome extension that blurs offensive Turkish text on web pages, on-device. A fine-tuned Turkish BERT runs inside the extension; no text ever leaves the browser.',
+        points: [
+          '0.804 macro F1 on the OffensEval-2020 Turkish test set, close to BERTurk (0.821) at 2.6× the size. int8 ONNX, 41 MB, ~18 ms per sentence',
+          'AUC 0.966 on a separate set of 478 news, forum and dictionary-site texts I collected and labelled by hand, with 1–2% false alarms on random text',
+          'Preprocessing and tokenizer give identical results in Python and JavaScript, with parity tests in CI. All models were trained on GitHub Actions',
+        ],
+        tech: ['PyTorch', 'Transformers', 'ONNX Runtime Web', 'JavaScript', 'Chrome MV3'],
+        demoNote: 'In Chrome Web Store review. For now it can be installed from the repository in developer mode.',
+        links: projectLinks.lockNet,
+      },
       {
         key: 'qrMenu',
         tone: 'lavender',
@@ -325,24 +384,23 @@ const en = {
         links: projectLinks.qrMenu,
       },
       {
-        key: 'assistant',
-        tone: 'peach',
-        featured: true,
-        title: 'Corporate Communication Assistant',
+        key: 'skinSavvy',
+        tone: 'sky',
+        title: 'SkinSavvy',
         summary:
-          'An app that uses AI to turn meeting transcripts into structured meeting records, tracks tasks across consecutive meetings and sends approved records to Notion. Built at BRN Teknoloji.',
+          'A skincare assistant that reads ingredient lists against your skin profile, catches clashes in your routine and reminds you when opened products expire.',
         points: [
-          'The model links task changes (new, updated, completed, cancelled) to the existing task registry; every item shows the transcript lines it is based on',
-          'No model output is saved without staff approval; rules block changes to tasks that are unknown or already closed',
-          'Prompt versions were measured against reference answers: the flawless-run rate rose from 60% to 100%, and stayed at 100% on an unseen scenario',
+          'Ingredient analysis with a 65-group knowledge base; warns about clashes like retinol and acids only on the days they overlap',
+          'Team review queue for user-added products: edit and approve, mark as duplicate, remove',
+          'FastAPI server: argon2, rotating refresh tokens and closing the whole session family on suspected theft',
         ],
-        tech: ['Python', 'OpenAI API', 'Pydantic', 'Streamlit', 'Notion API'],
-        privateNote: 'Source code is in a private repository',
-        links: {},
+        tech: ['Flutter', 'Dart', 'FastAPI', 'SQLAlchemy', 'Docker'],
+        demoNote: 'Opens without sign-up via "Try the demo account".',
+        links: projectLinks.skinSavvy,
       },
       {
         key: 'qrYoklama',
-        tone: 'sky',
+        tone: 'peach',
         title: 'QR Attendance',
         summary:
           'Takes class attendance in seconds and is hard to cheat. The teacher projects a QR code, students scan it with their phones.',
@@ -354,19 +412,6 @@ const en = {
         tech: ['Django', 'Python', 'SQLite', 'Docker'],
         demoNote: 'Demo account: demo / demo-sifre-2026',
         links: projectLinks.qrYoklama,
-      },
-      {
-        key: 'lockNet',
-        tone: 'butter',
-        title: 'LockNet',
-        summary: 'A privacy-first Chrome extension that finds and censors toxic text on web pages in real time.',
-        points: [
-          'The model runs offline inside the browser; the text it reads is never sent to a server',
-          'Text classification with natural language processing as the page loads',
-        ],
-        tech: ['JavaScript', 'TensorFlow.js', 'NLP', 'Chrome Extensions API'],
-        privateNote: 'Source code is in a private repository',
-        links: {},
       },
       {
         key: 'ataseng',
@@ -391,8 +436,8 @@ const en = {
         date: 'September – October 2026',
         points: [
           'Built an AI assistant for the internal communication of a medical products exporter: it turns meeting transcripts into structured records and tracks tasks across consecutive meetings.',
-          'Designed a flow where model output is validated with a Pydantic schema and approved by staff before it is saved; approved records sync both ways with Notion.',
-          'Measured each prompt version with five runs per synthetic scenario and raised the flawless-run rate from 60% to 100%.',
+          'Added a layer that masks personal data before it reaches OpenAI (KVKK), an audit trail and two-way sync with Notion.',
+          'Added source-cited search over the meeting archive (RAG) and a read-only agent; chose search methods and prompt versions by measuring them.',
         ],
       },
       {
@@ -420,15 +465,18 @@ const en = {
   skills: {
     title: 'Skills',
     groups: [
-      { name: 'Programming languages', items: ['Python', 'JavaScript', 'HTML5', 'CSS'] },
-      { name: 'Web development', items: ['Django', 'Django REST Framework', 'React', 'REST APIs'] },
+      { name: 'Programming languages', items: ['Python', 'JavaScript', 'Dart', 'HTML5', 'CSS'] },
       {
-        name: 'Data science and AI',
-        items: ['Machine learning', 'Natural language processing (NLP)', 'Deep learning', 'LLMs and prompt engineering', 'OpenAI API', 'TensorFlow.js'],
+        name: 'AI',
+        items: ['Machine learning', 'LLMs and prompt engineering', 'OpenAI API', 'RAG', 'Agents (tool calling)', 'PyTorch', 'Hugging Face Transformers', 'ONNX', 'scikit-learn', 'Natural language processing (NLP)'],
+      },
+      {
+        name: 'Web and mobile',
+        items: ['Django', 'Django REST Framework', 'FastAPI', 'React', 'Flutter', 'REST APIs', 'Chrome extensions (MV3)'],
       },
       {
         name: 'Tools',
-        items: ['Git and GitHub', 'GitHub Actions', 'Docker', 'pytest', 'Streamlit', 'Notion API', 'PySide6 / PyQt5', 'Figma', 'Unity', 'Claude'],
+        items: ['Git and GitHub', 'GitHub Actions', 'Docker', 'pytest', 'Streamlit', 'Notion API', 'PySide6', 'Figma', 'Unity', 'Claude'],
       },
     ],
     certTitle: 'Certificates',

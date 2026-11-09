@@ -97,21 +97,37 @@ describe('projeler', () => {
     )
   })
 
-  it.each(['LockNet', 'Kurumsal İletişim Asistanı'])('özel depodaki %s için bağlantı yerine not gösterir', (name) => {
+  it('özel depodaki Kurumsal İletişim Asistanı için bağlantı yerine not gösterir', () => {
     setup()
-    const card = screen.getByRole('article', { name })
+    const card = screen.getByRole('article', { name: 'Kurumsal İletişim Asistanı' })
     expect(within(card).queryByRole('link')).toBeNull()
     expect(card).toHaveTextContent('Kaynak kodu özel depoda')
   })
 
-  it('öne çıkan projeler sırayla gelir, ikincisinin görseli solda', () => {
+  it('herkese açılan LockNet kaynak koduna, SkinSavvy canlı demoya bağlanır', () => {
     setup()
-    const featured = document.querySelectorAll('.project.is-featured')
-    expect([...featured].map((el) => el.querySelector('h3').textContent)).toEqual([
-      'QR Menü',
+    const lockNet = screen.getByRole('article', { name: 'LockNet' })
+    expect(within(lockNet).getByRole('link', { name: /Kaynak kod/ })).toHaveAttribute(
+      'href',
+      'https://github.com/melisayalcinkaya/LockNet_extension',
+    )
+    expect(lockNet).not.toHaveTextContent('özel depoda')
+    const skin = screen.getByRole('article', { name: 'SkinSavvy' })
+    expect(within(skin).getByRole('link', { name: /Canlı demo/ })).toHaveAttribute(
+      'href',
+      'https://melisayalcinkaya.github.io/SkinSavvy/',
+    )
+  })
+
+  it('öne çıkan projeler sırayla gelir, görseller sağ ve sol arasında değişir', () => {
+    setup()
+    const featured = [...document.querySelectorAll('.project.is-featured')]
+    expect(featured.map((el) => el.querySelector('h3').textContent)).toEqual([
       'Kurumsal İletişim Asistanı',
+      'LockNet',
+      'QR Menü',
     ])
-    expect(featured[1]).toHaveClass('is-flipped')
+    expect(featured.map((el) => el.classList.contains('is-flipped'))).toEqual([false, true, false])
   })
 
   it('yeni sekmede açılan tüm bağlantılar rel="noreferrer" taşır', () => {
